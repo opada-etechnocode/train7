@@ -1,0 +1,105 @@
+import '../utils/shared_import.dart';
+
+class ViewDietCategoryScreen extends StatefulWidget {
+  const ViewDietCategoryScreen({super.key});
+
+  @override
+  _ViewDietCategoryScreenState createState() => _ViewDietCategoryScreenState();
+}
+
+class _ViewDietCategoryScreenState extends State<ViewDietCategoryScreen> {
+  ScrollController scrollController = ScrollController();
+
+  List<CategoryDietModel> mDietCategoryList = [];
+
+  CategoryDietModel? mCategoryDietModel;
+
+  int page = 1;
+  int? numPage;
+
+  bool isLastPage = false;
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels ==
+              scrollController.position.maxScrollExtent &&
+          !appStore.isLoading) {
+        if (page < numPage!) {
+          page++;
+          init();
+        }
+      }
+    });
+  }
+
+  Future<void> init() async {
+    getDietCategoryData();
+  }
+
+  Future<void> getDietCategoryData() async {
+    appStore.setLoading(true);
+    await getDietCategoryApi(page: page)
+        .then((value) {
+          appStore.setLoading(false);
+          numPage = value.pagination!.totalPages;
+          isLastPage = false;
+          if (page == 1) {
+            mDietCategoryList.clear();
+          }
+          final Iterable<CategoryDietModel> it = value.data!;
+          it.map((e) => mDietCategoryList.add(e)).toList();
+          setState(() {});
+        })
+        .catchError((Object e) {
+          isLastPage = true;
+          appStore.setLoading(false);
+          setState(() {});
+        });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: appBarWidget(
+      languages.lblDietCategories,
+      textColor: blackColor,
+      elevation: 0,
+      color: Colors.white,
+      context: context,
+    ),
+    body: Stack(
+      children: [
+        SingleChildScrollView(
+          controller: scrollController,
+          padding: const EdgeInsets.only(bottom: 16, top: 4),
+          child: AnimatedWrap(
+            runSpacing: 2,
+            spacing: 16,
+            children: List.generate(
+              mDietCategoryList.length,
+              (index) => DietCategoryComponent(
+                mCategoryDietModel: mDietCategoryList[index],
+                isGrid: true,
+                onCall: () {
+                  ViewAllDiet(
+                    mTitle: mDietCategoryList[index].title.validate(),
+                    isCategory: true,
+                    mCategoryId: mDietCategoryList[index].id,
+                  ).launch<void>(context);
+                },
+              ),
+            ),
+          ).paddingSymmetric(horizontal: 16),
+        ),
+        const Loader().center().visible(appStore.isLoading),
+      ],
+    ),
+  );
+}

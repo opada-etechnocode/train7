@@ -1,0 +1,88 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - "**/*.g.dart"          # MobX generated files
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+
+  language:
+#    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+  errors:
+    missing_required_param: error
+    missing_return: error
+    invalid_use_of_protected_member: error
+    dead_code: warning
+    unused_import: warning
+    unused_local_variable: warning
+    todo: ignore
+
+linter:
+  rules:
+
+    # =========================
+    # Architecture Discipline
+    # =========================
+    always_use_package_imports: false
+    prefer_relative_imports: true
+    avoid_relative_lib_imports: true
+    depend_on_referenced_packages: true
+
+    # =========================
+    # Clean Code Enforcement
+    # =========================
+    avoid_print: true
+    avoid_empty_else: true
+#    avoid_dynamic_calls: true
+    avoid_unnecessary_containers: true
+    unnecessary_this: true
+    prefer_final_fields: true
+    prefer_final_locals: true
+    prefer_expression_function_bodies: true
+    unnecessary_lambdas: true
+
+    # =========================
+    # Const & Performance
+    # =========================
+    constant_identifier_names: false
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    avoid_redundant_argument_values: true
+    sized_box_for_whitespace: true
+    use_key_in_widget_constructors: true
+
+    # =========================
+    # Async & Memory Safety
+    # =========================
+    use_build_context_synchronously: true
+    cancel_subscriptions: true
+    close_sinks: true
+    avoid_void_async: true
+
+    # =========================
+    # Error Handling
+    # =========================
+    avoid_catches_without_on_clauses: true
+    only_throw_errors: true
+
+    # =========================
+    # GetX Specific Adjustments
+    # =========================
+    avoid_types_as_parameter_names: false   # common in GetX bindings
+    library_private_types_in_public_api: false  # often triggered in controllers
+
+    # =========================
+    # Documentation (relaxed for large apps)
+    # =========================
+    public_member_api_docs: false
+
+    # =========================
+    # Style Consistency
+    # =========================
+    directives_ordering: true
+    sort_child_properties_last: true
+    lines_longer_than_80_chars: false

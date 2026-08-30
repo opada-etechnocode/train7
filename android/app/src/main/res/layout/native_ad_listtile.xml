@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/native_ad_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Card Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="12dp">
+
+        <!-- TOP ROW -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- App Icon -->
+            <ImageView
+                android:id="@+id/ad_icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop" />
+
+            <!-- Text -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ad_headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:text="Sponsored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#777" />
+            </LinearLayout>
+
+            <!-- CTA -->
+            <Button
+                android:id="@+id/ad_call_to_action"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#EC7E4A"
+                android:text="Install" />
+        </LinearLayout>
+
+        <!-- Media (Optional but improves CTR) -->
+        <com.google.android.gms.ads.nativead.MediaView
+            android:id="@+id/ad_media"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop" />
+
+    </LinearLayout>
+</com.google.android.gms.ads.nativead.NativeAdView>
+

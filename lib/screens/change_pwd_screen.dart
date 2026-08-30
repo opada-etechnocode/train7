@@ -1,0 +1,163 @@
+import '../utils/shared_import.dart';
+
+class ChangePwdScreen extends StatefulWidget {
+  const ChangePwdScreen({super.key});
+
+  @override
+  _ChangePwdScreenState createState() => _ChangePwdScreenState();
+}
+
+class _ChangePwdScreenState extends State<ChangePwdScreen> {
+  GlobalKey<FormState> mFormKey = GlobalKey<FormState>();
+
+  TextEditingController mOldCont = TextEditingController();
+  TextEditingController mPassCont = TextEditingController();
+  TextEditingController mConfirmPassCont = TextEditingController();
+
+  FocusNode mOldFocus = FocusNode();
+  FocusNode mPassFocus = FocusNode();
+  FocusNode mConfirmPassFocus = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  Future<void> init() async {
+    //
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+
+  Future<void> changePwd() async {
+    hideKeyboard(context);
+    if (mFormKey.currentState!.validate()) {
+      final Map<String, dynamic> req = {
+        'old_password': mOldCont.text.trim(),
+        'new_password': mPassCont.text.trim(),
+      };
+      appStore.setLoading(true);
+      await changePwdApi(req)
+          .then((value) async {
+            if (!mounted) return;
+            setValue(PASSWORD, mPassCont.text);
+            toast(value.message.validate());
+            appStore.setLoading(false);
+            finish(context);
+          })
+          .catchError((dynamic error) {
+            if (!mounted) return;
+            appStore.setLoading(false);
+            toast(error.toString());
+          });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: appBarWidget(languages.lblChangePassword, context: context),
+    body: Stack(
+      children: [
+        SingleChildScrollView(
+          child: Form(
+            key: mFormKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                4.height,
+                Text(
+                  languages.lblPasswordMsg,
+                  style: primaryTextStyle(size: 14),
+                ),
+                24.height,
+                Text(
+                  languages.lblCurrentPassword,
+                  style: secondaryTextStyle(color: textPrimaryColorGlobal),
+                ),
+                4.height,
+                AppTextField(
+                  controller: mOldCont,
+                  focus: mOldFocus,
+                  nextFocus: mPassFocus,
+                  textFieldType: TextFieldType.PASSWORD,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: defaultInputDecoration(
+                    context,
+                    label: languages.lblEnterCurrentPwd,
+                  ),
+                  onFieldSubmitted: (c) {},
+                ),
+                16.height,
+                Text(
+                  languages.lblNewPassword,
+                  style: secondaryTextStyle(color: textPrimaryColorGlobal),
+                ),
+                4.height,
+                AppTextField(
+                  controller: mPassCont,
+                  focus: mPassFocus,
+                  nextFocus: mConfirmPassFocus,
+                  textFieldType: TextFieldType.PASSWORD,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: defaultInputDecoration(
+                    context,
+                    label: languages.lblEnterNewPwd,
+                  ),
+                  onFieldSubmitted: (c) {},
+                ),
+                16.height,
+                Text(
+                  languages.lblConfirmPassword,
+                  style: secondaryTextStyle(color: textPrimaryColorGlobal),
+                ),
+                4.height,
+                AppTextField(
+                  controller: mConfirmPassCont,
+                  focus: mConfirmPassFocus,
+                  textFieldType: TextFieldType.PASSWORD,
+                  keyboardType: TextInputType.visiblePassword,
+                  decoration: defaultInputDecoration(
+                    context,
+                    label: languages.lblEnterConfirmPwd,
+                  ),
+                  validator: (String? value) {
+                    if (value!.isEmpty) return errorThisFieldRequired;
+                    if (value.length < passwordLengthGlobal) {
+                      return languages.errorPwdLength;
+                    }
+                    if (value.trim() != mPassCont.text.trim()) {
+                      return languages.errorPwdMatch;
+                    }
+                    return null;
+                  },
+                  onFieldSubmitted: (c) {
+                    changePwd();
+                  },
+                ),
+                24.height,
+                AppButton(
+                  text: languages.lblSubmit,
+                  width: context.width(),
+                  color: primaryColor,
+                  onTap: () {
+                    changePwd();
+                  },
+                ),
+              ],
+            ).paddingSymmetric(horizontal: 16),
+          ),
+        ),
+        Observer(
+          builder: (context) =>
+              const Loader().center().visible(appStore.isLoading),
+        ),
+      ],
+    ),
+  );
+}
