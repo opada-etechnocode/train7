@@ -23,8 +23,8 @@ dependencies:
   device_preview: ^1.2.0
 
   flutter_chrome_cast: ^1.2.9
-#  flutter_chrome_cast:
-#    path: flutter_google_cast-master
+  #  flutter_chrome_cast:
+  #    path: flutter_google_cast-master
 
 
   #Network
@@ -98,7 +98,7 @@ dependencies:
   google_mobile_ads: ^5.1.0
 
   #step count
-#  pedometer: ^4.0.2
+  #  pedometer: ^4.0.2
   daily_pedometer2: ^1.1.3
   health:
 
@@ -131,7 +131,7 @@ dependencies:
 
   flutter_math_fork: 0.7.4
   focused_menu: ^1.0.5
-  font_awesome_flutter: ^10.8.0
+  font_awesome_flutter: ^11.0.0
   smooth_page_indicator: ^1.2.1
   dotted_border: ^2.1.0
   photo_manager: ^3.7.1
@@ -156,7 +156,7 @@ dependencies:
   stripe_platform_interface: 11.3.0
 
   #payment
- # razorpay_flutter: ^1.3.7
+  # razorpay_flutter: ^1.3.7
   razorpay_flutter: ^1.4.0
   flutter_stripe: ^11.0.0
   bambara_flutter: ^0.0.6
@@ -169,7 +169,7 @@ dependencies:
   package_info_plus: ^8.1.0
   readmore: ^3.0.0
   visibility_detector: ^0.4.0+2
-
+  webview_flutter_wkwebview: 3.13.0
 
   permission_handler_platform_interface: any
   image_cropper: 12.2.1

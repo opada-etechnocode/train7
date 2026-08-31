@@ -1,0 +1,9 @@
+[!] No `Podfile' found in the project directory.
+
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/command.rb:161:in 'Pod::Command#verify_podfile_exists!'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/command/install.rb:46:in 'Pod::Command::Install#run'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/claide-1.1.0/lib/claide/command.rb:334:in 'CLAide::Command.run'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/command.rb:52:in 'Pod::Command.run'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/bin/pod:55:in '<top (required)>'
+/opt/homebrew/Cellar/cocoapods/1.16.2_1/libexec/bin/pod:25:in 'Kernel#load'
+/opt/homebrew/Cellar/cocoapods/1.16.2_1/libexec/bin/pod:25:in '<main>'

@@ -1,0 +1,186 @@
+  Preparing
+
+Updating local specs repositories
+  CDN: trunk Relative path: CocoaPods-version.yml exists! Returning local because checking is only performed in repo update
+
+Updating spec repo `trunk`
+  CDN: trunk Relative path: deprecated_podspecs.txt, has ETag? W/"6a9569f7-e1791"
+  CDN: trunk Relative path downloaded: deprecated_podspecs.txt, save ETag: W/"6a956ba9-e1791"
+  CDN: trunk Going to update 48 files
+  CDN: trunk Relative path: CocoaPods-version.yml, has ETag? "6a956857-38"
+  CDN: trunk Relative path: all_pods_versions_0_3_5.txt, has ETag? W/"6a9569f7-e27"
+  CDN: trunk Relative path: all_pods_versions_0_6_a.txt, has ETag? W/"6a956857-635"
+  CDN: trunk Relative path: all_pods_versions_0_8_4.txt, has ETag? W/"6a956857-f1a"
+  CDN: trunk Relative path: all_pods_versions_0_9_f.txt, has ETag? W/"6a9569f7-9fa"
+  CDN: trunk Relative path: all_pods_versions_0_b_5.txt, has ETag? W/"6a956857-78f"
+  CDN: trunk Relative path: all_pods_versions_0_d_e.txt, has ETag? W/"6a9569f7-68f"
+  CDN: trunk Relative path: all_pods_versions_1_1_7.txt, has ETag? W/"6a956857-dfb"
+  CDN: trunk Relative path: all_pods_versions_1_6_1.txt, has ETag? W/"6a956ba8-4c9"
+  CDN: trunk Relative path: all_pods_versions_1_9_2.txt, has ETag? W/"6a9569f7-27a"
+  CDN: trunk Relative path: all_pods_versions_2_2_8.txt, has ETag? W/"6a9569f7-b72"
+  CDN: trunk Relative path: all_pods_versions_2_d_6.txt, has ETag? W/"6a956857-9df"
+  CDN: trunk Relative path: all_pods_versions_2_f_7.txt, has ETag? W/"6a956857-6d4"
+  CDN: trunk Relative path: all_pods_versions_3_1_8.txt, has ETag? W/"6a9569f7-516"
+  CDN: trunk Relative path: all_pods_versions_3_5_e.txt, has ETag? W/"6a9569f7-376"
+  CDN: trunk Relative path: all_pods_versions_3_8_6.txt, has ETag? W/"6a9569f7-531"
+  CDN: trunk Relative path: all_pods_versions_3_c_c.txt, has ETag? W/"6a9569f7-7a6"
+  CDN: trunk Relative path: all_pods_versions_4_2_7.txt, has ETag? W/"6a956857-7e9"
+  CDN: trunk Relative path: all_pods_versions_4_2_c.txt, has ETag? W/"6a956ba8-535"
+  CDN: trunk Relative path: all_pods_versions_4_7_f.txt, has ETag? W/"6a9569f7-a7a"
+  CDN: trunk Relative path: all_pods_versions_4_a_9.txt, has ETag? W/"6a9569f7-aec"
+  CDN: trunk Relative path: all_pods_versions_5_4_9.txt, has ETag? W/"6a9569f7-bd3"
+  CDN: trunk Relative path: all_pods_versions_5_9_a.txt, has ETag? W/"6a9569f7-a4b"
+  CDN: trunk Relative path: all_pods_versions_5_d_c.txt, has ETag? W/"6a956ba8-510"
+  CDN: trunk Relative path: all_pods_versions_6_1_e.txt, has ETag? W/"6a956857-599"
+  CDN: trunk Relative path: all_pods_versions_6_8_6.txt, has ETag? W/"6a9569f7-6a1"
+  CDN: trunk Relative path: all_pods_versions_6_f_6.txt, has ETag? W/"6a9569f7-5dc"
+  CDN: trunk Relative path: all_pods_versions_7_9_1.txt, has ETag? W/"6a956857-4e2"
+  CDN: trunk Relative path: all_pods_versions_8_1_2.txt, has ETag? W/"6a9569f7-748"
+  CDN: trunk Relative path: all_pods_versions_8_b_d.txt, has ETag? W/"6a956857-8bc"
+  CDN: trunk Relative path: all_pods_versions_9_1_0.txt, has ETag? W/"6a9569f7-db9"
+  CDN: trunk Relative path: all_pods_versions_9_b_5.txt, has ETag? W/"6a9569f7-c6f"
+  CDN: trunk Relative path: all_pods_versions_a_d_a.txt, has ETag? W/"6a9569f7-3c8"
+  CDN: trunk Relative path: all_pods_versions_a_d_d.txt, has ETag? W/"6a9569f7-5bd"
+  CDN: trunk Relative path: all_pods_versions_b_3_c.txt, has ETag? W/"6a9569f7-1466"
+  CDN: trunk Relative path: all_pods_versions_b_5_f.txt, has ETag? W/"6a9569f7-94b"
+  CDN: trunk Relative path: all_pods_versions_b_9_e.txt, has ETag? W/"6a9569f7-a06"
+  CDN: trunk Relative path: all_pods_versions_b_c_7.txt, has ETag? W/"6a956857-8eb"
+  CDN: trunk Relative path: all_pods_versions_c_8_7.txt, has ETag? W/"6a9569f7-c96"
+  CDN: trunk Relative path: all_pods_versions_c_e_3.txt, has ETag? W/"6a9569f7-694"
+  CDN: trunk Relative path: all_pods_versions_d_a_5.txt, has ETag? W/"6a9569f7-c7a"
+  CDN: trunk Relative path: all_pods_versions_d_a_7.txt, has ETag? W/"6a9569f7-ba8"
+  CDN: trunk Relative path: all_pods_versions_d_f_3.txt, has ETag? W/"6a956ba9-705"
+  CDN: trunk Relative path: all_pods_versions_e_9_8.txt, has ETag? W/"6a9569f7-882"
+  CDN: trunk Relative path: all_pods_versions_e_9_b.txt, has ETag? W/"6a9569f7-1404"
+  CDN: trunk Relative path: all_pods_versions_e_9_d.txt, has ETag? W/"6a9569f7-5ed"
+  CDN: trunk Relative path: all_pods_versions_f_8_8.txt, has ETag? W/"6a9569f7-89c"
+  CDN: trunk Relative path: all_pods_versions_f_9_d.txt, has ETag? W/"6a9569f7-7c2"
+  CDN: trunk Relative path downloaded: CocoaPods-version.yml, save ETag: "6a956d09-38"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_6_a.txt, save ETag: W/"6a956ba8-635"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_d_6.txt, save ETag: W/"6a956ba8-9df"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_f_7.txt, save ETag: W/"6a956ba8-6d4"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_1_8.txt, save ETag: W/"6a956d09-516"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_5_e.txt, save ETag: W/"6a956ba9-376"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_8_6.txt, save ETag: W/"6a956d09-531"
+  CDN: trunk Relative path downloaded: all_pods_versions_3_c_c.txt, save ETag: W/"6a956d09-7a6"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_3_5.txt, save ETag: W/"6a956d09-e27"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_7_f.txt, save ETag: W/"6a956ba9-a7a"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_4_9.txt, save ETag: W/"6a956ba9-bd3"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_9_a.txt, save ETag: W/"6a956d0a-a4b"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_8_6.txt, save ETag: W/"6a956ba8-6a1"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_f_6.txt, save ETag: W/"6a956ba8-5dc"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_9_f.txt, save ETag: W/"6a956d0a-9fa"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_b_5.txt, save ETag: W/"6a956ba8-78f"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_d_e.txt, save ETag: W/"6a956d0a-68f"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_1_7.txt, save ETag: W/"6a956ba8-dfb"
+  CDN: trunk Relative path downloaded: all_pods_versions_0_8_4.txt, save ETag: W/"6a956ba8-f1a"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_6_1.txt, save ETag: W/"6a956d09-4c9"
+  CDN: trunk Relative path downloaded: all_pods_versions_1_9_2.txt, save ETag: W/"6a956d09-27a"
+  CDN: trunk Relative path downloaded: all_pods_versions_2_2_8.txt, save ETag: W/"6a956d09-b72"
+  CDN: trunk Relative path downloaded: all_pods_versions_6_1_e.txt, save ETag: W/"6a956ba8-599"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_b_d.txt, save ETag: W/"6a956ba8-8bc"
+  CDN: trunk Relative path downloaded: all_pods_versions_7_9_1.txt, save ETag: W/"6a956ba8-4e2"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_3_c.txt, save ETag: W/"6a956ba8-1466"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_b_5.txt, save ETag: W/"6a956ba8-c6f"
+  CDN: trunk Relative path downloaded: all_pods_versions_9_1_0.txt, save ETag: W/"6a956d0a-db9"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_d_a.txt, save ETag: W/"6a956ba9-3c8"
+  CDN: trunk Relative path downloaded: all_pods_versions_a_d_d.txt, save ETag: W/"6a956ba8-5bd"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_8_7.txt, save ETag: W/"6a956d0a-c96"
+  CDN: trunk Relative path downloaded: all_pods_versions_c_e_3.txt, save ETag: W/"6a956ba9-694"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_a_5.txt, save ETag: W/"6a956d09-c7a"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_9_8.txt, save ETag: W/"6a956ba8-882"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_8_8.txt, save ETag: W/"6a956d0a-89c"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_9_b.txt, save ETag: W/"6a956d0a-1404"
+  CDN: trunk Relative path downloaded: all_pods_versions_e_9_d.txt, save ETag: W/"6a956d09-5ed"
+  CDN: trunk Relative path downloaded: all_pods_versions_8_1_2.txt, save ETag: W/"6a956d09-748"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_2_7.txt, save ETag: W/"6a956d0a-7e9"
+  CDN: trunk Relative path downloaded: all_pods_versions_5_d_c.txt, save ETag: W/"6a956d09-510"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_2_c.txt, save ETag: W/"6a956d09-535"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_9_e.txt, save ETag: W/"6a956d09-a06"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_5_f.txt, save ETag: W/"6a956d09-94b"
+  CDN: trunk Relative path downloaded: all_pods_versions_b_c_7.txt, save ETag: W/"6a956d0a-8eb"
+  CDN: trunk Relative path downloaded: all_pods_versions_f_9_d.txt, save ETag: W/"6a956d0a-7c2"
+  CDN: trunk Relative path downloaded: all_pods_versions_4_a_9.txt, save ETag: W/"6a956d0a-aec"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_a_7.txt, save ETag: W/"6a956d09-ba8"
+  CDN: trunk Relative path downloaded: all_pods_versions_d_f_3.txt, save ETag: W/"6a956d09-705"
+
+Analyzing dependencies
+
+Inspecting targets to integrate
+  Using `ARCHS` setting to build architectures of target `Pods-Runner`: (``)
+  Using `ARCHS` setting to build architectures of target `Pods-OneSignalNotificationServiceExtension`: (``)
+
+Fetching external sources
+-> Fetching podspec for `Flutter` from `Flutter`
+-> Fetching podspec for `awesome_notifications` from `.symlinks/plugins/awesome_notifications/ios`
+-> Fetching podspec for `daily_pedometer2` from `.symlinks/plugins/daily_pedometer2/ios`
+-> Fetching podspec for `flutter_braintree_payment` from `.symlinks/plugins/flutter_braintree_payment/ios`
+-> Fetching podspec for `flutter_inappwebview_ios` from `.symlinks/plugins/flutter_inappwebview_ios/ios`
+-> Fetching podspec for `flutter_paytabs_bridge` from `.symlinks/plugins/flutter_paytabs_bridge/ios`
+-> Fetching podspec for `flutter_tts` from `.symlinks/plugins/flutter_tts/ios`
+-> Fetching podspec for `fluttertoast` from `.symlinks/plugins/fluttertoast/ios`
+-> Fetching podspec for `google_mobile_ads` from `.symlinks/plugins/google_mobile_ads/ios`
+-> Fetching podspec for `health` from `.symlinks/plugins/health/ios`
+-> Fetching podspec for `my_fatoorah_payment_flutter` from `.symlinks/plugins/my_fatoorah_payment_flutter/ios`
+-> Fetching podspec for `razorpay_flutter` from `.symlinks/plugins/razorpay_flutter/ios`
+-> Fetching podspec for `sign_in_with_apple` from `.symlinks/plugins/sign_in_with_apple/ios`
+-> Fetching podspec for `the_apple_sign_in` from `.symlinks/plugins/the_apple_sign_in/ios`
+-> Fetching podspec for `video_compress` from `.symlinks/plugins/video_compress/ios`
+
+Resolving dependencies of `Podfile`
+  CDN: trunk Relative path: all_pods_versions_8_1_2.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/8/1/2/google-cast-sdk/4.8.6/google-cast-sdk.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_d_f_3.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/d/f/3/OneSignalXCFramework/5.5.6/OneSignalXCFramework.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_b_9_e.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/b/9/e/IosAwnCore/0.12.1/IosAwnCore.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_d_a_5.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/d/a/5/Braintree/7.11.0/Braintree.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: Specs/d/a/5/Braintree/6.30.0/Braintree.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_b_5_f.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/b/5/f/PayTabsSDK/6.6.59/PayTabsSDK.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_f_9_d.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/f/9/d/razorpay-pod/1.5.8/razorpay-pod.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_5_9_a.txt modified during this run! Returning local
+  CDN: trunk Relative path: Specs/5/9/a/Google-Mobile-Ads-SDK/13.9.0/Google-Mobile-Ads-SDK.podspec.json exists! Returning local because checking is only performed in repo update
+  CDN: trunk Relative path: all_pods_versions_e_9_b.txt modified during this run! Returning local
+[!] Unable to find a specification for `webview_flutter_wkwebview` depended upon by `google_mobile_ads`
+
+You have either:
+ * mistyped the name or version.
+ * not added the source repo that hosts the Podspec to your Podfile.
+
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:389:in 'Pod::Resolver#find_cached_set'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:360:in 'Pod::Resolver#specifications_for_dependency'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:165:in 'Pod::Resolver#search_for'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:274:in 'block in Pod::Resolver#sort_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:267:in 'Array#each'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:267:in 'Enumerable#sort_by'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:267:in 'Array#sort_by!'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:267:in 'Pod::Resolver#sort_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/delegates/specification_provider.rb:60:in 'block in Molinillo::Delegates::SpecificationProvider#sort_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/delegates/specification_provider.rb:77:in 'Molinillo::Delegates::SpecificationProvider#with_no_such_dependency_error_handling'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/delegates/specification_provider.rb:59:in 'Molinillo::Delegates::SpecificationProvider#sort_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:754:in 'Molinillo::Resolver::Resolution#push_state_for_requirements'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:744:in 'Molinillo::Resolver::Resolution#require_nested_dependencies_for'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:727:in 'Molinillo::Resolver::Resolution#activate_new_spec'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:684:in 'Molinillo::Resolver::Resolution#attempt_to_activate'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:254:in 'Molinillo::Resolver::Resolution#process_topmost_state'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:182:in 'Molinillo::Resolver::Resolution#resolve'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/molinillo-0.8.0/lib/molinillo/resolver.rb:43:in 'Molinillo::Resolver#resolve'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/resolver.rb:94:in 'Pod::Resolver#resolve'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/analyzer.rb:1082:in 'block in Pod::Installer::Analyzer#resolve_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/user_interface.rb:64:in 'Pod::UserInterface.section'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/analyzer.rb:1080:in 'Pod::Installer::Analyzer#resolve_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer/analyzer.rb:125:in 'Pod::Installer::Analyzer#analyze'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:422:in 'Pod::Installer#analyze'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:244:in 'block in Pod::Installer#resolve_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/user_interface.rb:64:in 'Pod::UserInterface.section'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:243:in 'Pod::Installer#resolve_dependencies'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/installer.rb:162:in 'Pod::Installer#install!'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/command/install.rb:52:in 'Pod::Command::Install#run'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/claide-1.1.0/lib/claide/command.rb:334:in 'CLAide::Command.run'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/lib/cocoapods/command.rb:52:in 'Pod::Command.run'
+/opt/homebrew/lib/ruby/gems/3.4.0/gems/cocoapods-1.16.2/bin/pod:55:in '<top (required)>'
+/opt/homebrew/Cellar/cocoapods/1.16.2_1/libexec/bin/pod:25:in 'Kernel#load'
+/opt/homebrew/Cellar/cocoapods/1.16.2_1/libexec/bin/pod:25:in '<main>'
