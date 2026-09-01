@@ -195,7 +195,7 @@ class PostCardWidget extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(FontAwesomeIcons.pen , size: 16, color: Colors.black),
+                const FaIcon(FontAwesomeIcons.pen , size: 16, color: Colors.black),
                 6.width,
                 Text(
                   languages.lblEditPost,

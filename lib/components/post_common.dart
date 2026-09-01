@@ -581,7 +581,7 @@ class LikeComment {
                                                     mainAxisSize:
                                                         MainAxisSize.min,
                                                     children: [
-                                                      const Icon(
+                                                      const FaIcon(
                                                         FontAwesomeIcons.pen,
                                                         size: 16,
                                                         color: Colors.black,
@@ -951,7 +951,7 @@ class LikeComment {
                                                                 MainAxisSize
                                                                     .min,
                                                             children: [
-                                                              const Icon(
+                                                              const FaIcon(
                                                                 FontAwesomeIcons
                                                                     .pen,
                                                                 size: 16,
