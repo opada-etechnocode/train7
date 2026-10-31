@@ -36,7 +36,7 @@ class PaymentGatewayItem extends StatelessWidget {
           Row(
             children: [
               cachedImage(
-                paymentItem.gatewayLogo!,
+                paymentItem.gatewayLogo.validate(),
                 width: 35,
                 height: 35,
                 fit: BoxFit.contain,

@@ -1,3 +1,4 @@
+import '../service/myfatoorah_payment_service.dart';
 import '../utils/shared_import.dart';
 
 class SubscribeProgramBottomSheet extends StatefulWidget {
@@ -37,48 +38,103 @@ class _SubscribeProgramBottomSheetState
     }
 
     final bool followUp = hasFollowUpOption ? isFollowUp : false;
+    final ProgramModel program = widget.program;
+    final bool popOnSuccess = widget.popOnSuccess;
+    final num amount = totalPrice;
 
-    // Paid programs: MyFatoorah first, then subscribe-package on success
-    if (totalPrice > 0) {
-      Navigator.pop(context);
-      PaymentScreen(
-        mProgramModel: widget.program,
-        isFollowUp: followUp,
-      ).launch<void>(context);
+    // Free programs: subscribe directly
+    if (amount <= 0) {
+      setState(() => isSubmitting = true);
+      await _subscribePackage(
+        program: program,
+        followUp: followUp,
+        paymentType: 'free',
+        txnId: '',
+        popOnSuccess: popOnSuccess,
+        closeSheetFirst: true,
+      );
       return;
     }
 
-    // Free programs: subscribe directly
+    // Paid: close options sheet, then open MyFatoorah methods dialog
     setState(() => isSubmitting = true);
+    Navigator.pop(context);
+
+    final BuildContext? payContext = navigatorKey.currentContext;
+    if (payContext == null || !payContext.mounted) return;
+
+    appStore.setLoading(true);
+    final MyFatoorahPaymentResult? result = await MyFatoorahPaymentService.pay(
+      context: payContext,
+      amount: amount,
+    );
+    appStore.setLoading(false);
+
+    if (result == null) return; // user cancelled method sheet
+
+    if (!result.success) {
+      toast(result.message ?? languages.lblPaymentFailed);
+      return;
+    }
+
+    await _subscribePackage(
+      program: program,
+      followUp: followUp,
+      paymentType: PAYMENT_TYPE_MYFATOORAH,
+      txnId: result.invoiceId ?? '',
+      popOnSuccess: popOnSuccess,
+      closeSheetFirst: false,
+      hostContext: payContext,
+    );
+  }
+
+  Future<void> _subscribePackage({
+    required ProgramModel program,
+    required bool followUp,
+    required String paymentType,
+    required String txnId,
+    required bool popOnSuccess,
+    required bool closeSheetFirst,
+    BuildContext? hostContext,
+  }) async {
     appStore.setLoading(true);
 
     final Map<String, dynamic> req = {
-      "package_id": widget.program.id,
+      "package_id": program.id,
       "is_follow_up": followUp,
       "payment_status": "paid",
-      "payment_type": "free",
+      "payment_type": paymentType,
+      "txn_id": txnId,
+      "transaction_detail": txnId,
     };
 
     await subscribeProgramApi(req)
         .then((value) async {
           toast(value.message);
-          if (!mounted) return;
-          await getUSerDetail(context, userStore.userId).whenComplete(() async {
-            if (!mounted) return;
+          final BuildContext? ctx = hostContext ??
+              (mounted ? context : navigatorKey.currentContext);
+          if (ctx == null || !ctx.mounted) {
+            appStore.setLoading(false);
+            return;
+          }
+
+          await getUSerDetail(ctx, userStore.userId).whenComplete(() async {
             appStore.setLoading(false);
             LiveStream().emit(PAYMENT);
-            Navigator.pop(context);
-            if (!mounted) return;
-            await ProgramDetailScreen(program: widget.program)
-                .launch<void>(context);
-            if (widget.popOnSuccess && mounted) {
-              finish(context);
+
+            if (closeSheetFirst && ctx.mounted) {
+              Navigator.pop(ctx);
+            }
+
+            if (!ctx.mounted) return;
+            await ProgramDetailScreen(program: program).launch<void>(ctx);
+            if (popOnSuccess && ctx.mounted) {
+              finish(ctx);
             }
           });
         })
         .catchError((Object e) {
-          if (!mounted) return;
-          setState(() => isSubmitting = false);
+          if (mounted) setState(() => isSubmitting = false);
           appStore.setLoading(false);
           toast(e.toString());
           log(e.toString());

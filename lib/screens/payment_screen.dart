@@ -82,159 +82,26 @@ class PaymentScreenState extends State<PaymentScreen> {
   }
 
   Future<void> init() async {
-    await paymentListApiCall();
-    if (paymentList.any((element) => element.type == PAYMENT_TYPE_STRIPE)) {
-      Stripe.publishableKey = stripPaymentPublishKey.validate();
-      Stripe.merchantIdentifier = mStripeIdentifier;
-      await Stripe.instance.applySettings().catchError((Object e) {
-        log(e.toString());
-      });
-    }
-    if (paymentList.any((element) => element.type == PAYMENT_TYPE_PAYSTACK)) {
-      log("---------109>>>${payStackPublicKey.validate()}");
-      // plugin.initialize(publicKey: payStackPublicKey.validate());
-    }
-    if (paymentList.any((element) => element.type == PAYMENT_TYPE_RAZORPAY)) {
-      _razorpay = Razorpay();
-      _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
-      _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
-      _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
-    }
-  }
+    // Programs use MyFatoorah only — skip payment-gateway-list API
+    selectedPaymentType = PAYMENT_TYPE_MYFATOORAH;
+    myFatoorahToken = MYFATOORAH_TOKEN;
+    isFatrooahTestType = MYFATOORAH_IS_TEST;
+    paymentList = [
+      PaymentModel(
+        title: 'MyFatoorah',
+        type: PAYMENT_TYPE_MYFATOORAH,
+        isTest: MYFATOORAH_IS_TEST ? 1 : 0,
+        status: 1,
+        testValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
+        liveValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
+      ),
+    ];
+    if (mounted) setState(() {});
 
-  /// Get Payment Gateway Api Call
-  Future<void> paymentListApiCall() async {
-    appStore.setLoading(true);
-    await getPaymentApi()
-        .then((value) {
-          appStore.setLoading(false);
-          log("---------127>>>${value.toJson()}");
-          paymentList.addAll(value.data!);
-          if (paymentList.isNotEmpty) {
-            for (var element in paymentList) {
-              if (element.type == PAYMENT_TYPE_STRIPE) {
-                log('----------132>>>${element.testValue?.secretKey}');
-                log('----------133>>>${element.liveValue?.publishableKey}');
-                stripPaymentKey = element.isTest == 1
-                    ? element.testValue?.secretKey
-                    : element.liveValue?.secretKey;
-                // stripPaymentKey = 'sk_test_51GrhA2Bz1ljKAgF9FIJPLupBUCHFCOy5rS6LCnYHSu6Od0Qyx3TElGbxIu8BGRvq14fgidGOYyNkQPivZGnzWoVt004fCZxVdk';
-                stripPaymentPublishKey = element.isTest == 1
-                    ? element.testValue?.publishableKey
-                    : element.liveValue?.publishableKey;
-                //stripPaymentPublishKey = 'pk_test_51GrhA2Bz1ljKAgF98fI6WfB2YUn4CewOB0DNQC1pSeXspUc1LlUYs3ou19oPF0ATcqa52FXTYmv6v0mkvPZb9BSD00SUpBj9tI';
-              } else if (element.type == PAYMENT_TYPE_PAYSTACK) {
-                payStackPublicKey = element.isTest == 1
-                    ? element.testValue!.publicKey
-                    : element.liveValue!.publicKey;
-              } else if (element.type == PAYMENT_TYPE_RAZORPAY) {
-                razorKey = element.isTest == 1
-                    ? element.testValue!.keyId.validate()
-                    : element.liveValue!.keyId.validate();
-              } else if (element.type == PAYMENT_TYPE_PAYPAL) {
-                if (element.isTest == 1) {
-                  paypalValue = {
-                    "is_test": true,
-                    "client_id": "${element.testValue?.publicKey}",
-                    "client_secret": "${element.testValue?.secretKey}",
-                  };
-                } else {
-                  paypalValue = {
-                    "is_test": false,
-                    "client_id": "${element.liveValue?.publicKey}",
-                    "client_secret": "${element.liveValue?.secretKey}",
-                  };
-                }
-
-                // payPalTokenizationKey = element.isTest == 1
-                //     ? element.testValue?.tokenizationKey
-                //     : element.liveValue?.tokenizationKey;
-              } else if (element.type == PAYMENT_TYPE_FLUTTERWAVE) {
-                flutterWavePublicKey = element.isTest == 1
-                    ? element.testValue!.publicKey
-                    : element.liveValue!.publicKey;
-                flutterWaveSecretKey = element.isTest == 1
-                    ? element.testValue!.secretKey
-                    : element.liveValue!.secretKey;
-                flutterWaveEncryptionKey = element.isTest == 1
-                    ? element.testValue!.encryptionKey
-                    : element.liveValue!.encryptionKey;
-              } else if (element.type == PAYMENT_TYPE_PAYTABS) {
-                payTabsProfileId = element.isTest == 1
-                    ? element.testValue!.profileId
-                    : element.liveValue!.profileId;
-                payTabsClientKey = element.isTest == 1
-                    ? element.testValue!.clientKey
-                    : element.liveValue!.clientKey;
-                payTabsServerKey = element.isTest == 1
-                    ? element.testValue!.serverKey
-                    : element.liveValue!.serverKey;
-              } else if (element.type == PAYMENT_TYPE_MYFATOORAH) {
-                isFatrooahTestType = element.isTest == 1;
-                myFatoorahToken = element.isTest == 1
-                    ? element.testValue?.accessToken
-                    : element.liveValue?.accessToken;
-              } else if (element.type == PAYMENT_TYPE_PAYTM) {
-                if (element.isTest == 1) {
-                  isPaytmTestType = true;
-                } else {
-                  isPaytmTestType = false;
-                }
-                paytmMerchantId = element.isTest == 1
-                    ? element.testValue!.merchantId
-                    : element.liveValue!.merchantId;
-                paytmMerchantKey = element.isTest == 1
-                    ? element.testValue!.merchantKey
-                    : element.liveValue!.merchantKey;
-              } else if (element.type == PAYMENT_TYPE_ORANGE_MONEY) {
-                orangeMoneyPublicKey = element.isTest == 1
-                    ? element.testValue!.publicKey
-                    : element.liveValue!.publicKey;
-              }
-            }
-          }
-
-          if (!paymentList.any((e) => e.type == PAYMENT_TYPE_MYFATOORAH)) {
-            paymentList.add(
-              PaymentModel(
-                title: 'MyFatoorah',
-                type: PAYMENT_TYPE_MYFATOORAH,
-                isTest: MYFATOORAH_IS_TEST ? 1 : 0,
-                status: 1,
-                testValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
-                liveValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
-              ),
-            );
-          }
-
-          myFatoorahToken ??= MYFATOORAH_TOKEN;
-          if (selectedPaymentType == null && paymentList.isNotEmpty) {
-            selectedPaymentType = paymentList
-                    .firstWhere(
-                      (e) => e.type == PAYMENT_TYPE_MYFATOORAH,
-                      orElse: () => paymentList.first,
-                    )
-                    .type;
-          }
-          setState(() {});
-        })
-        .catchError((Object error) {
-          appStore.setLoading(false);
-          // Fallback: still offer MyFatoorah with local test credentials
-          paymentList.add(
-            PaymentModel(
-              title: 'MyFatoorah',
-              type: PAYMENT_TYPE_MYFATOORAH,
-              isTest: 1,
-              status: 1,
-              testValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
-            ),
-          );
-          myFatoorahToken = MYFATOORAH_TOKEN;
-          selectedPaymentType = PAYMENT_TYPE_MYFATOORAH;
-          setState(() {});
-          log(error.toString());
-        });
+    // Open MyFatoorah methods sheet immediately
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) executeFatoorahPayment();
+    });
   }
 
   Future<void> executeFatoorahPayment() async {
@@ -723,57 +590,31 @@ class PaymentScreenState extends State<PaymentScreen> {
     appBar: appBarWidget(languages.lblPayments, context: context),
     body: Stack(
       children: [
-        PaymentGatewayList(
-          paymentList: paymentList,
-          selectedPaymentType: selectedPaymentType,
-          onPaymentTypeSelected: (type) {
-            setState(() {
-              selectedPaymentType = type;
-            });
-          },
-        ).visible(paymentList.isNotEmpty),
-        const NoDataScreen().visible(paymentList.isEmpty && !appStore.isLoading),
+        Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(languages.lblPayments, style: boldTextStyle(size: 18)),
+              8.height,
+              PriceWidget(
+                price: payableAmount.toStringAsFixed(2),
+                color: primaryColor,
+                textStyle: boldTextStyle(color: primaryColor, size: 22),
+              ),
+              24.height,
+              AppButton(
+                text: languages.lblPay,
+                color: primaryColor,
+                onTap: executeFatoorahPayment,
+              ),
+            ],
+          ),
+        ),
         Observer(
           builder: (context) =>
               const Loader().center().visible(appStore.isLoading),
         ),
       ],
-    ),
-    bottomNavigationBar: PaymentFooter(
-      isVisible: paymentList.isNotEmpty,
-      onTap: () {
-        if (selectedPaymentType == PAYMENT_TYPE_RAZORPAY) {
-          razorPayPayment();
-        } else if (selectedPaymentType == PAYMENT_TYPE_STRIPE) {
-          stripePay();
-        } else if (selectedPaymentType == PAYMENT_TYPE_PAYSTACK) {
-          payStackPayment(context);
-        } else if (selectedPaymentType == PAYMENT_TYPE_PAYPAL) {
-          payPalPayments();
-        } else if (selectedPaymentType == PAYMENT_TYPE_FLUTTERWAVE) {
-          flutterWaveCheckout();
-        } else if (selectedPaymentType == PAYMENT_TYPE_PAYTABS) {
-          PayTabScreen(
-            cartId: userStore.userId.toString(),
-            currencyCode: userStore.currencyCode.toUpperCase(),
-            amount: payableAmount.toDouble(),
-            profileId: payTabsProfileId,
-            clientKey: payTabsClientKey,
-            serverKey: payTabsServerKey,
-            onCall: () {
-              paymentConfirm();
-            },
-          ).launch<void>(context);
-        } else if (selectedPaymentType == PAYMENT_TYPE_PAYTM) {
-          // paytmPayment();
-        } else if (selectedPaymentType == PAYMENT_TYPE_ORANGE_MONEY) {
-          orangeMoneyPayment();
-        } else if (selectedPaymentType == PAYMENT_TYPE_MYFATOORAH) {
-          executeFatoorahPayment();
-        } else {
-          toast(languages.lblPayments);
-        }
-      },
     ),
   );
 }
