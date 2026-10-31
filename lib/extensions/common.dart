@@ -255,7 +255,7 @@ Route<T> buildPageRoute<T>(
       );
     }
   }
-  return MaterialPageRoute<T>(builder: (_) => child);
+  return CupertinoPageRoute<T>(builder: (_) => child);
 }
 
 EdgeInsets dynamicAppButtonPadding(BuildContext context) {

@@ -70,8 +70,11 @@ class _BodyPartComponentState extends State<BodyPartComponent> {
         height: 128,
         padding: const EdgeInsets.fromLTRB(10, 16, 10, 12),
         decoration: BoxDecoration(
-          color: isDark ?  Color(0xFF151A22) : context.cardColor,
+          color: isDark ? const Color(0xFF151A22) : context.cardColor,
           borderRadius: BorderRadius.circular(24),
+          border: isDark
+              ? null
+              : Border.all(color: lightDividerColor),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.06),

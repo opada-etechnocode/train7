@@ -9,7 +9,7 @@ final mBackendURL = AppServerConfig.baseUrl; //live url
 
 //endregion
 //region Default Language Code
-const DEFAULT_LANGUAGE = 'en';
+const DEFAULT_LANGUAGE = 'ar';
 //endregion
 
 //region Change Walk Through Text

@@ -6,6 +6,8 @@ analyzer:
     - "**/*.g.dart"          # MobX generated files
     - "**/*.freezed.dart"
     - "**/*.config.dart"
+    - android/**
+    - ios/**
 
   language:
 #    strict-casts: true

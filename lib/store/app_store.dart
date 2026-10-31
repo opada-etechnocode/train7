@@ -92,12 +92,11 @@ abstract class AppStoreBase with Store {
 
     setDefaultLocate();
     selectedLanguageCode = aCode;
-    try {
-      if (context != null) languages = BaseLanguage.of(context)!;
-    } on Exception { }
-    languages = (await const AppLocalizations().load(
+    await setValue(SELECTED_LANGUAGE_CODE, aCode);
+    await initJsonFile(languageCode: aCode);
+    languages = await const AppLocalizations().load(
       Locale(selectedLanguageCode),
-    ));
+    );
   }
 
   @action
@@ -124,7 +123,7 @@ abstract class AppStoreBase with Store {
       appButtonBackgroundColorGlobal = primaryColor;
       shadowColorGlobal = Colors.black12;
       setStatusBarColor(
-        whiteColor,
+        Colors.white,
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
       );

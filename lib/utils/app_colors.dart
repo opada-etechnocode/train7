@@ -17,6 +17,12 @@ const BackgroundColorImageColor = Color(0xffFAFAFA);
 const GreyLightColor = Color(0xffEDEDED);
 
 const cardBackground = Color(0xFFFAFAFA);
+const lightScaffoldColor = Color(0xFFF5F6F8);
+const lightCardColor = Color(0xFFFFFFFF);
+const lightDividerColor = Color(0xFFE6E8EC);
+/// Home/dark card accent used by redesigned home widgets (unchanged).
+const darkCardColor = Color(0xFF151A22);
+const darkScaffoldBg = Colors.black;
 
 const grayColor = Color(0xffC5C6C7);
 

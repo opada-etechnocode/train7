@@ -31,19 +31,39 @@ class _SubscribeProgramBottomSheetState
 
   Future<void> _confirmSubscribe() async {
     if (isSubmitting) return;
+    if (!userStore.isLoggedIn) {
+      const SignInScreen().launch<void>(context);
+      return;
+    }
+
+    final bool followUp = hasFollowUpOption ? isFollowUp : false;
+
+    // Paid programs: MyFatoorah first, then subscribe-package on success
+    if (totalPrice > 0) {
+      Navigator.pop(context);
+      PaymentScreen(
+        mProgramModel: widget.program,
+        isFollowUp: followUp,
+      ).launch<void>(context);
+      return;
+    }
+
+    // Free programs: subscribe directly
     setState(() => isSubmitting = true);
     appStore.setLoading(true);
 
     final Map<String, dynamic> req = {
       "package_id": widget.program.id,
-      "is_follow_up": hasFollowUpOption ? isFollowUp : false,
+      "is_follow_up": followUp,
+      "payment_status": "paid",
+      "payment_type": "free",
     };
 
     await subscribeProgramApi(req)
         .then((value) async {
           toast(value.message);
           if (!mounted) return;
-          await getUSerDetail(context, userStore.userId).whenComplete(() async{
+          await getUSerDetail(context, userStore.userId).whenComplete(() async {
             if (!mounted) return;
             appStore.setLoading(false);
             LiveStream().emit(PAYMENT);

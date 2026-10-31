@@ -5,10 +5,16 @@ import '../service/reminder_notification_service.dart';
 import 'shared_import.dart';
 
 void setTheme() {
-
-
+  final int mode = getIntAsync(THEME_MODE_INDEX, defaultValue: ThemeModeLight);
+  if (mode == ThemeModeDark) {
     appStore.setDarkMode(true);
-
+  } else if (mode == ThemeModeSystem) {
+    final Brightness brightness =
+        WidgetsBinding.instance.platformDispatcher.platformBrightness;
+    appStore.setDarkMode(brightness == Brightness.dark);
+  } else {
+    appStore.setDarkMode(false);
+  }
 }
 
 Widget cachedImage(

@@ -167,6 +167,17 @@ const PAYMENT_TYPE_PAYTM = 'paytm';
 const PAYMENT_TYPE_MYFATOORAH = 'myfatoorah';
 const PAYMENT_TYPE_ORANGE_MONEY = 'orangemoney';
 
+/// MyFatoorah (test). Prefer token from payment-list API when available.
+/// Primary country: UAE (AED).
+const MYFATOORAH_TOKEN =
+    'SK_KWT_vVZlnnAqu8jRByOWaRPNId4ShzEDNt256dvnjebuyzo52dXjAfRx2ixW5umjWSUx';
+const MYFATOORAH_BASE_URL = 'https://apitest.myfatoorah.com/';
+const MYFATOORAH_SESSION_JS_URL =
+    'https://demo.myfatoorah.com/sessions/v1/session.js';
+const MYFATOORAH_IS_TEST = true;
+const MYFATOORAH_COUNTRY = 'ARE'; // UAE
+const MYFATOORAH_CURRENCY = 'AED';
+
 const FONT_SIZE_PREF = 'FONT_SIZE_PREF';
 const IS_PLAYING = "IS_PLAYING";
 

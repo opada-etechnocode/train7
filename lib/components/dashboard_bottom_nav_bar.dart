@@ -27,15 +27,15 @@ class DashboardBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDark = appStore.isDarkMode;
-    final Color barColor = isDark ? const Color(0xFF12151C) : context.cardColor;
-    final Color inactive = isDark ? Colors.white54 : Colors.grey;
+    final Color barColor = isDark ? const Color(0xFF12151C) : Colors.white;
+    final Color inactive = isDark ? Colors.white54 : const Color(0xFF8A8A8A);
 
     return Container(
       decoration: BoxDecoration(
         color: barColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.25),
+            color: Colors.black.withValues(alpha: isDark ? 0.25 : 0.08),
             blurRadius: 16,
             offset: const Offset(0, -4),
           ),

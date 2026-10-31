@@ -35,7 +35,8 @@ ShapeBorder? defaultAppButtonShapeBorder;
 
 double defaultAppButtonRadius = 10.0;
 double defaultAppButtonElevation = 4.0;
-PageRouteAnimation? pageRouteAnimationGlobal = PageRouteAnimation.Fade;
+/// null → CupertinoPageRoute (iOS-style edge swipe back on all platforms)
+PageRouteAnimation? pageRouteAnimationGlobal;
 Duration pageRouteTransitionDurationGlobal = 400.milliseconds;
 
 int passwordLengthGlobal = 6;

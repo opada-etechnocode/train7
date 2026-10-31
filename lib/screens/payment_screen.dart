@@ -1,18 +1,23 @@
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
-import 'package:my_fatoorah_payment_flutter/myfatoorah_flutter.dart';
 import 'package:pay_with_paystack/pay_with_paystack.dart';
 //import 'package:paytm_allinonesdk/paytm_allinonesdk.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 import '../models/stripe_pay_model.dart';
+import '../service/myfatoorah_payment_service.dart';
 import '../utils/shared_import.dart';
 
 class PaymentScreen extends StatefulWidget {
   static String tag = '/payment_screen';
   final ProgramModel? mProgramModel;
+  final bool isFollowUp;
 
-  const PaymentScreen({super.key, this.mProgramModel});
+  const PaymentScreen({
+    super.key,
+    this.mProgramModel,
+    this.isFollowUp = false,
+  });
 
   @override
   PaymentScreenState createState() => PaymentScreenState();
@@ -45,12 +50,22 @@ class PaymentScreenState extends State<PaymentScreen> {
   String? razorKey;
 
   bool isPaytmTestType = true;
-  bool isFatrooahTestType = true;
+  bool isFatrooahTestType = MYFATOORAH_IS_TEST;
   bool loading = false;
+  String? lastTxnId;
 
   // final plugin = PaystackPlugin();
 
   late Razorpay _razorpay;
+
+  num get payableAmount {
+    final num base = widget.mProgramModel?.price ?? 0;
+    final num followUp = widget.mProgramModel?.followUpPrice ?? 0;
+    if (widget.isFollowUp && widget.mProgramModel?.followUpPrice != null) {
+      return base + followUp;
+    }
+    return base;
+  }
 
   // CheckoutMethod method = CheckoutMethod.card;
 
@@ -155,15 +170,10 @@ class PaymentScreenState extends State<PaymentScreen> {
                     ? element.testValue!.serverKey
                     : element.liveValue!.serverKey;
               } else if (element.type == PAYMENT_TYPE_MYFATOORAH) {
-                if (element.isTest == 1) {
-                  isFatrooahTestType = true;
-                } else {
-                  isFatrooahTestType = false;
-                }
+                isFatrooahTestType = element.isTest == 1;
                 myFatoorahToken = element.isTest == 1
-                    ? element.testValue!.accessToken
-                    : element.liveValue!.accessToken;
-                executeFatoorahPayment();
+                    ? element.testValue?.accessToken
+                    : element.liveValue?.accessToken;
               } else if (element.type == PAYMENT_TYPE_PAYTM) {
                 if (element.isTest == 1) {
                   isPaytmTestType = true;
@@ -183,65 +193,68 @@ class PaymentScreenState extends State<PaymentScreen> {
               }
             }
           }
+
+          if (!paymentList.any((e) => e.type == PAYMENT_TYPE_MYFATOORAH)) {
+            paymentList.add(
+              PaymentModel(
+                title: 'MyFatoorah',
+                type: PAYMENT_TYPE_MYFATOORAH,
+                isTest: MYFATOORAH_IS_TEST ? 1 : 0,
+                status: 1,
+                testValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
+                liveValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
+              ),
+            );
+          }
+
+          myFatoorahToken ??= MYFATOORAH_TOKEN;
+          if (selectedPaymentType == null && paymentList.isNotEmpty) {
+            selectedPaymentType = paymentList
+                    .firstWhere(
+                      (e) => e.type == PAYMENT_TYPE_MYFATOORAH,
+                      orElse: () => paymentList.first,
+                    )
+                    .type;
+          }
           setState(() {});
         })
         .catchError((Object error) {
           appStore.setLoading(false);
+          // Fallback: still offer MyFatoorah with local test credentials
+          paymentList.add(
+            PaymentModel(
+              title: 'MyFatoorah',
+              type: PAYMENT_TYPE_MYFATOORAH,
+              isTest: 1,
+              status: 1,
+              testValue: LiveValue(accessToken: MYFATOORAH_TOKEN),
+            ),
+          );
+          myFatoorahToken = MYFATOORAH_TOKEN;
+          selectedPaymentType = PAYMENT_TYPE_MYFATOORAH;
+          setState(() {});
           log(error.toString());
         });
   }
 
-  /// My Fatoorah Payment
-  Future<void> initiatePayment() async {
-    try {
-      await MFSDK.init(
-        "$myFatoorahToken",
-        MFCountry.KUWAIT,
-        isFatrooahTestType ? MFEnvironment.TEST : MFEnvironment.LIVE,
-      );
-      final MFInitiatePaymentRequest request = MFInitiatePaymentRequest(
-        invoiceAmount: 10,
-        currencyIso: MFCurrencyISO.SAUDIARABIA_SAR,
-      );
-      await MFSDK
-          .initiatePayment(request, MFLanguage.ENGLISH)
-          .then((value) {})
-          .catchError((error) {});
-    } on Exception catch (e) {
-      log("Exception during initiatePayment(): $e");
-    }
-  }
-
   Future<void> executeFatoorahPayment() async {
-    try {
-      await initiatePayment(); // Optional: depends on when you want to call it
-      final MFExecutePaymentRequest request = MFExecutePaymentRequest(
-        invoiceValue: widget.mProgramModel!.price,
-      );
-      // 1 is for knet
-      // 2 is for card payment
-      request.paymentMethodId =
-          1; // Replace with valid method ID from init response
-      try {
-        final MFGetPaymentStatusResponse b1 = await MFSDK.executePayment(
-          request,
-          MFLanguage.ENGLISH,
-          (invoiceId) {},
-        );
-        if (b1.invoiceStatus?.toLowerCase() == "paid") {
-          paymentConfirm();
-        }
-      } on Exception {
-        toast(
-          "Payment failed: Invalid token or unsupported currency.",
-          length: Toast.LENGTH_LONG,
-        );
-      }
-    } on Exception {
-      toast(
-        "Payment failed: Invalid token or unsupported currency.",
-        length: Toast.LENGTH_LONG,
-      );
+    appStore.setLoading(true);
+    final MyFatoorahPaymentResult? result =
+        await MyFatoorahPaymentService.pay(
+      context: context,
+      amount: payableAmount,
+      token: myFatoorahToken ?? MYFATOORAH_TOKEN,
+      isTest: isFatrooahTestType,
+    );
+    appStore.setLoading(false);
+
+    if (result == null) return;
+
+    if (result.success) {
+      lastTxnId = result.invoiceId;
+      await paymentConfirm();
+    } else {
+      toast(result.message ?? languages.lblPaymentFailed);
     }
   }
 
@@ -318,7 +331,7 @@ class PaymentScreenState extends State<PaymentScreen> {
   void razorPayPayment() {
     final options = {
       'key': razorKey.validate(),
-      'amount': (widget.mProgramModel!.price!.toDouble() * 100).toInt(),
+      'amount': (payableAmount.toDouble() * 100).toInt(),
       'name': APP_NAME,
       'timeout': 60,
       'description': mRazorDescription,
@@ -367,7 +380,7 @@ class PaymentScreenState extends State<PaymentScreen> {
 
     request.bodyFields = {
       'amount':
-          '${(widget.mProgramModel!.price!.toDouble() * 100).toInt()}',
+          '${(payableAmount.toDouble() * 100).toInt()}',
       'currency': userStore.currencyCode.toUpperCase(),
       'payment_method_types[]': 'card',
     };
@@ -453,7 +466,7 @@ class PaymentScreenState extends State<PaymentScreen> {
         customerEmail: getStringAsync(EMAIL),
         reference: uniqueTransRef,
         currency: "NGN",
-        amount: (widget.mProgramModel?.price ?? 0).toDouble(),
+        amount: payableAmount.toDouble(),
         callbackUrl: "https://google.com",
         transactionCompleted: (paymentData) {
           if (paymentData.status == 'success') {
@@ -531,7 +544,7 @@ class PaymentScreenState extends State<PaymentScreen> {
           'amount': {
             'currency_code': userStore.currencyCode.toUpperCase(),
             'value':
-                '${(widget.mProgramModel!.price!.toDouble() * 100).toInt()}',
+                '${(payableAmount.toDouble() * 100).toInt()}',
           },
           'description': 'Wallet Top UP',
         },
@@ -589,7 +602,7 @@ class PaymentScreenState extends State<PaymentScreen> {
     final body = {
       "redirect_url": "https://example_company.com/success",
       "tx_ref": getRandomString(10),
-      "amount": widget.mProgramModel?.price,
+      "amount": payableAmount,
       "currency": userStore.currencyCode.toLowerCase(),
       "customer": {
         "email": userStore.email.validate(),
@@ -640,7 +653,7 @@ class PaymentScreenState extends State<PaymentScreen> {
     log("---------------------<<<----$orangeMoneyPublicKey");
     await BambaraView(
       data: BambaraData(
-        amount: widget.mProgramModel?.price?.toInt() ?? 0,
+        amount: payableAmount.toInt(),
         provider: 'bank-card',
         reference: getRandomString(30),
         phone: userStore.phoneNo.validate(),
@@ -677,28 +690,30 @@ class PaymentScreenState extends State<PaymentScreen> {
     appStore.setLoading(true);
     final Map<String, dynamic> req = {
       "package_id": widget.mProgramModel!.id,
-      "is_follow_up": false,
+      "is_follow_up": widget.isFollowUp,
       "payment_status": "paid",
-      "payment_type": selectedPaymentType,
-      "txn_id": "",
-      "transaction_detail": "",
+      "payment_type": selectedPaymentType ?? PAYMENT_TYPE_MYFATOORAH,
+      "txn_id": lastTxnId ?? "",
+      "transaction_detail": lastTxnId ?? "",
     };
     await subscribeProgramApi(req)
         .then((value) async {
           toast(value.message);
           if (!mounted) return;
-          await getUSerDetail(context, userStore.userId).whenComplete(() {
+          await getUSerDetail(context, userStore.userId).whenComplete(() async {
             if (!mounted) return;
-            setState(() {
-              appStore.setLoading(false);
-              LiveStream().emit(PAYMENT);
-              finish(context);
-              finish(context);
-            });
+            appStore.setLoading(false);
+            LiveStream().emit(PAYMENT);
+            finish(context);
+            if (!mounted) return;
+            await ProgramDetailScreen(
+              program: widget.mProgramModel!,
+            ).launch<void>(context);
           });
         })
         .catchError((Object e) {
           appStore.setLoading(false);
+          toast(e.toString());
           log(e.toString());
         });
   }
@@ -741,7 +756,7 @@ class PaymentScreenState extends State<PaymentScreen> {
           PayTabScreen(
             cartId: userStore.userId.toString(),
             currencyCode: userStore.currencyCode.toUpperCase(),
-            amount: widget.mProgramModel?.price?.toDouble(),
+            amount: payableAmount.toDouble(),
             profileId: payTabsProfileId,
             clientKey: payTabsClientKey,
             serverKey: payTabsServerKey,
@@ -753,6 +768,10 @@ class PaymentScreenState extends State<PaymentScreen> {
           // paytmPayment();
         } else if (selectedPaymentType == PAYMENT_TYPE_ORANGE_MONEY) {
           orangeMoneyPayment();
+        } else if (selectedPaymentType == PAYMENT_TYPE_MYFATOORAH) {
+          executeFatoorahPayment();
+        } else {
+          toast(languages.lblPayments);
         }
       },
     ),

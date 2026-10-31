@@ -129,20 +129,20 @@ AppBar appBarWidget(
       ),
   actions: actions ?? [],
   automaticallyImplyLeading: showBack,
-  backgroundColor: appStore.isDarkMode ? scaffoldColorDark : Colors.white,
+  backgroundColor: color ??
+      (appStore.isDarkMode ? scaffoldColorDark : Colors.white),
   leading: showBack ? (backWidget ?? backIcon(context)) : null,
   shadowColor: shadowColor,
   elevation: elevation ?? defaultAppBarElevation,
   systemOverlayStyle:
       systemUiOverlayStyle ??
       SystemUiOverlayStyle(
-        statusBarColor: appStore.isDarkMode ? scaffoldColorDark : Colors.white,
-        statusBarIconBrightness: appStore.isDarkMode
-            ? Brightness.light
-            : Brightness.dark,
-        statusBarBrightness: appStore.isDarkMode
-            ? Brightness.light
-            : Brightness.light,
+        statusBarColor:
+            appStore.isDarkMode ? scaffoldColorDark : Colors.white,
+        statusBarIconBrightness:
+            appStore.isDarkMode ? Brightness.light : Brightness.dark,
+        statusBarBrightness:
+            appStore.isDarkMode ? Brightness.light : Brightness.dark,
       ),
   bottom: bottom,
   titleSpacing: titleSpacing,

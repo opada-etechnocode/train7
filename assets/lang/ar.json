@@ -1,0 +1,3308 @@
+[
+  {
+    "screenID": "1",
+    "ScreenName": "WalkThroughScreen",
+    "keyword_data": [
+      {
+        "screenId": "1",
+        "keyword_id": 1,
+        "keyword_name": "lblWalkTitle1",
+        "keyword_value": "اعثر على التمرين المناسب\nلما تحتاجه"
+      },
+      {
+        "screenId": "1",
+        "keyword_id": 2,
+        "keyword_name": "lblWalkTitle2",
+        "keyword_value": "اختر التمرين المناسب\nوخطة الغذاء للبقاء لائقاً."
+      },
+      {
+        "screenId": "1",
+        "keyword_id": 3,
+        "keyword_name": "lblWalkTitle3",
+        "keyword_value": "تتبّع نشاطك اليومي بسهولة"
+      },
+      {
+        "screenId": "1",
+        "keyword_id": 4,
+        "keyword_name": "lblGetStarted",
+        "keyword_value": "ابدأ الآن"
+      },
+      {
+        "screenId": "1",
+        "keyword_id": 5,
+        "keyword_name": "lblNext",
+        "keyword_value": "التالي"
+      },
+      {
+        "screenId": "1",
+        "keyword_id": 6,
+        "keyword_name": "lblSkip",
+        "keyword_value": "تخطي"
+      },
+      {
+        "screenId": "1",
+        "keyword_id": 231,
+        "keyword_name": "lblEmailIsInvalid",
+        "keyword_value": "البريد الإلكتروني غير صالح"
+      }
+    ]
+  },
+  {
+    "screenID": "2",
+    "ScreenName": "SignInScreen",
+    "keyword_data": [
+      {
+        "screenId": "2",
+        "keyword_id": 7,
+        "keyword_name": "lblLogin",
+        "keyword_value": "تسجيل الدخول"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 8,
+        "keyword_name": "lblWelcomeBack",
+        "keyword_value": "مرحباً بعودتك،"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 9,
+        "keyword_name": "lblWelcomeBackDesc",
+        "keyword_value": "مرحباً، سجّل الدخول للمتابعة!"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 10,
+        "keyword_name": "lblEmail",
+        "keyword_value": "البريد الإلكتروني"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 11,
+        "keyword_name": "lblEnterEmail",
+        "keyword_value": "أدخل البريد الإلكتروني"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 12,
+        "keyword_name": "lblPassword",
+        "keyword_value": "كلمة المرور"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 13,
+        "keyword_name": "lblEnterPassword",
+        "keyword_value": "أدخل كلمة المرور"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 14,
+        "keyword_name": "lblRememberMe",
+        "keyword_value": "تذكرني"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 15,
+        "keyword_name": "lblForgotPassword",
+        "keyword_value": "نسيت كلمة المرور؟"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 16,
+        "keyword_name": "lblOr",
+        "keyword_value": "أو"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 17,
+        "keyword_name": "lblNewUser",
+        "keyword_value": "مستخدم جديد؟"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 18,
+        "keyword_name": "lblRegisterNow",
+        "keyword_value": "سجّل الآن"
+      },
+      {
+        "screenId": "2",
+        "keyword_id": 19,
+        "keyword_name": "lblContactAdmin",
+        "keyword_value": "تواصل مع المسؤول"
+      }
+    ]
+  },
+  {
+    "screenID": "3",
+    "ScreenName": "SignUpStep1Component",
+    "keyword_data": [
+      {
+        "screenId": "3",
+        "keyword_id": 20,
+        "keyword_name": "lblTellUsAboutYourself",
+        "keyword_value": "أخبرنا عن نفسك!"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 21,
+        "keyword_name": "lblFirstName",
+        "keyword_value": "الاسم الأول"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 22,
+        "keyword_name": "lblEnterFirstName",
+        "keyword_value": "أدخل الاسم الأول"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 23,
+        "keyword_name": "lblLastName",
+        "keyword_value": "اسم العائلة"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 24,
+        "keyword_name": "lblEnterLastName",
+        "keyword_value": "أدخل اسم العائلة"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 25,
+        "keyword_name": "lblPhoneNumber",
+        "keyword_value": "رقم الهاتف"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 26,
+        "keyword_name": "lblEnterPhoneNumber",
+        "keyword_value": "أدخل رقم الهاتف"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 27,
+        "keyword_name": "lblConfirmPassword",
+        "keyword_value": "تأكيد كلمة المرور"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 28,
+        "keyword_name": "lblEnterConfirmPwd",
+        "keyword_value": "أدخل تأكيد كلمة المرور"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 29,
+        "keyword_name": "errorPwdLength",
+        "keyword_value": "يجب أن يزيد طول كلمة المرور عن 6 أحرف"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 30,
+        "keyword_name": "errorPwdMatch",
+        "keyword_value": "يجب أن تتطابق كلمتا المرور"
+      },
+      {
+        "screenId": "3",
+        "keyword_id": 31,
+        "keyword_name": "lblAlreadyAccount",
+        "keyword_value": "لديك حساب بالفعل؟"
+      }
+    ]
+  },
+  {
+    "screenID": "4",
+    "ScreenName": "SignUpStep2Component",
+    "keyword_data": [
+      {
+        "screenId": "4",
+        "keyword_id": 32,
+        "keyword_name": "lblWhtGender",
+        "keyword_value": "ما هو جنسك؟"
+      },
+      {
+        "screenId": "4",
+        "keyword_id": 33,
+        "keyword_name": "lblMale",
+        "keyword_value": "ذكر"
+      },
+      {
+        "screenId": "4",
+        "keyword_id": 34,
+        "keyword_name": "lblFemale",
+        "keyword_value": "أنثى"
+      }
+    ]
+  },
+  {
+    "screenID": "5",
+    "ScreenName": "SignUpStep3Component",
+    "keyword_data": [
+      {
+        "screenId": "5",
+        "keyword_id": 35,
+        "keyword_name": "lblHowOld",
+        "keyword_value": "كم عمرك؟"
+      }
+    ]
+  },
+  {
+    "screenID": "6",
+    "ScreenName": "SignUpStep4Component",
+    "keyword_data": [
+      {
+        "screenId": "6",
+        "keyword_id": 36,
+        "keyword_name": "lblLetUsKnowBetter",
+        "keyword_value": "دعنا نتعرف عليك بشكل أفضل"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 37,
+        "keyword_name": "lblWeight",
+        "keyword_value": "الوزن"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 38,
+        "keyword_name": "lblEnterWeight",
+        "keyword_value": "أدخل الوزن"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 39,
+        "keyword_name": "lblHeight",
+        "keyword_value": "الطول"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 40,
+        "keyword_name": "lblEnterHeight",
+        "keyword_value": "أدخل الطول"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 41,
+        "keyword_name": "lblDone",
+        "keyword_value": "تم"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 42,
+        "keyword_name": "lblLbs",
+        "keyword_value": "رطل"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 43,
+        "keyword_name": "lblKg",
+        "keyword_value": "كغ"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 44,
+        "keyword_name": "lblCm",
+        "keyword_value": "سم"
+      },
+      {
+        "screenId": "6",
+        "keyword_id": 45,
+        "keyword_name": "lblFeet",
+        "keyword_value": "قدم"
+      }
+    ]
+  },
+  {
+    "screenID": "7",
+    "ScreenName": "DashboardScreen",
+    "keyword_data": [
+      {
+        "screenId": "7",
+        "keyword_id": 46,
+        "keyword_name": "lblHome",
+        "keyword_value": "الرئيسية"
+      },
+      {
+        "screenId": "7",
+        "keyword_id": 47,
+        "keyword_name": "lblDiet",
+        "keyword_value": "الغذاء"
+      },
+      {
+        "screenId": "7",
+        "keyword_id": 48,
+        "keyword_name": "lblShop",
+        "keyword_value": "المتجر"
+      },
+      {
+        "screenId": "7",
+        "keyword_id": 232,
+        "keyword_name": "lblReport",
+        "keyword_value": "المقاييس"
+      },
+      {
+        "screenId": "7",
+        "keyword_id": 49,
+        "keyword_name": "lblProfile",
+        "keyword_value": "الملف الشخصي"
+      },
+      {
+        "screenId": "7",
+        "keyword_id": 50,
+        "keyword_name": "lblTapBackAgainToLeave",
+        "keyword_value": "اضغط رجوع مرة أخرى للخروج"
+      }
+    ]
+  },
+  {
+    "screenID": "8",
+    "ScreenName": "HomeScreen",
+    "keyword_data": [
+      {
+        "screenId": "8",
+        "keyword_id": 51,
+        "keyword_name": "lblHey",
+        "keyword_value": "مرحباً،"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 52,
+        "keyword_name": "lblHomeWelMsg",
+        "keyword_value": "ابقَ صحياً دائماً"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 53,
+        "keyword_name": "lblSearch",
+        "keyword_value": "بحث"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 54,
+        "keyword_name": "lblBodyPartExercise",
+        "keyword_value": "تمارين أجزاء الجسم"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 55,
+        "keyword_name": "lblEquipmentsExercise",
+        "keyword_value": "تمارين أدوات التدريب"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 56,
+        "keyword_name": "lblWorkouts",
+        "keyword_value": "التمارين"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 57,
+        "keyword_name": "lblLevels",
+        "keyword_value": "مستويات التمرين"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 202,
+        "keyword_name": "lblTips",
+        "keyword_value": "نصائح"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 238,
+        "keyword_name": "lblLevel",
+        "keyword_value": "المستوى"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 241,
+        "keyword_name": "lblDay",
+        "keyword_value": "اليوم"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 246,
+        "keyword_name": "lblUpdateNow",
+        "keyword_value": "حدّث الآن"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 247,
+        "keyword_name": "lblUpdateAvailable",
+        "keyword_value": "يتوفر تحديث"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 248,
+        "keyword_name": "lblUpdateNote",
+        "keyword_value": "إصدار جديد جاهز! حدّث الآن للحصول على أحدث الميزات والتحسينات."
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 249,
+        "keyword_name": "lblGameOver",
+        "keyword_value": "انتهت اللعبة!"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 250,
+        "keyword_name": "lblMainMenu",
+        "keyword_value": "القائمة الرئيسية"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 251,
+        "keyword_name": "lblBetterLuckNextTime",
+        "keyword_value": "حظاً أوفر في المرة القادمة!"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 252,
+        "keyword_name": "lblExit",
+        "keyword_value": "خروج"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 253,
+        "keyword_name": "lblMightyBrainWorkout",
+        "keyword_value": "تمرين العقل Mighty"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 254,
+        "keyword_name": "lblGameTitle",
+        "keyword_value": "اعثر على لون مختلف لاختبار تمرين العقل"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 255,
+        "keyword_name": "lblStart",
+        "keyword_value": "ابدأ"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 256,
+        "keyword_name": "lblPleaseWait",
+        "keyword_value": "يرجى الانتظار"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 257,
+        "keyword_name": "lblHoursAfterPlayAgain",
+        "keyword_value": "ساعات ثم العب مجدداً"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 258,
+        "keyword_name": "lblBuildMuscle",
+        "keyword_value": "بناء العضلات"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 259,
+        "keyword_name": "lblKeepFit",
+        "keyword_value": "الحفاظ على اللياقة"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 260,
+        "keyword_name": "lblLoseWeight",
+        "keyword_value": "خسارة الوزن"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 261,
+        "keyword_name": "lblFirstDescriptions1",
+        "keyword_value": "أوزان أخف مع تكرارات أعلى والتركيز على العضلات المتوسطة والصغيرة"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 262,
+        "keyword_name": "lblFirstDescriptions2",
+        "keyword_value": "ابدأ بخطط تمارين عضلية أساسية وحافظ على لياقة عضلاتك وتناسقها"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 263,
+        "keyword_name": "lblFirstDescriptions3",
+        "keyword_value": "أوزان أخف مع تكرارات أعلى وأوقات راحة أقصر مع تمارين الكارديو"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 264,
+        "keyword_name": "lblTotallyNewbie",
+        "keyword_value": "مبتدئ تماماً"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 265,
+        "keyword_name": "lblBeginner",
+        "keyword_value": "مبتدئ"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 266,
+        "keyword_name": "lblIntermediate",
+        "keyword_value": "متوسط"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 267,
+        "keyword_name": "lblAdvanced",
+        "keyword_value": "متقدم"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 268,
+        "keyword_name": "LblSecDesc1",
+        "keyword_value": "لم أتمرن من قبل"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 269,
+        "keyword_name": "LblSecDesc2",
+        "keyword_value": "تمرنت من قبل لكن ليس بجدية"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 270,
+        "keyword_name": "LblSecDesc3",
+        "keyword_value": "تمرنت من قبل"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 271,
+        "keyword_name": "LblSecDesc4",
+        "keyword_value": "أتمرن منذ سنوات"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 272,
+        "keyword_name": "lblNoEquipment",
+        "keyword_value": "بدون أدوات تدريب"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 273,
+        "keyword_name": "lblDumbbells",
+        "keyword_value": "أوزان يدوية"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 274,
+        "keyword_name": "lblGarageGym",
+        "keyword_value": "صالة منزلية"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 275,
+        "keyword_name": "lblFullGym",
+        "keyword_value": "صالة رياضية كاملة"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 276,
+        "keyword_name": "lblCustom",
+        "keyword_value": "مخصص"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 277,
+        "keyword_name": "lblThirdDescriptions1",
+        "keyword_value": "تمارين منزلية بوزن الجسم"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 278,
+        "keyword_name": "lblThirdDescriptions2",
+        "keyword_value": "تمارين بالأوزان اليدوية ووزن الجسم فقط"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 279,
+        "keyword_name": "lblThirdDescriptions3",
+        "keyword_value": "تمارين بالبار والأوزان اليدوية ووزن الجسم"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 280,
+        "keyword_name": "lblThirdDescriptions4",
+        "keyword_value": "جميع تمارين أدوات التدريب والبار وغيرها"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 281,
+        "keyword_name": "lblThirdDescriptions5",
+        "keyword_value": "اختر أدوات التدريب المتوفرة لديك أو التي ترغب باستخدامها"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 282,
+        "keyword_name": "lblHomeScreenTitle",
+        "keyword_value": "أدخل طولك ووزنك وجنسك وعمرك للوصول إلى الميزات المتقدمة."
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 307,
+        "keyword_name": "lblRepsWeight",
+        "keyword_value": "التكرارات-الوزن"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 309,
+        "keyword_name": "lblLeaderboard",
+        "keyword_value": "لوحة المتصدرين"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 308,
+        "keyword_name": "lblRest",
+        "keyword_value": "راحة"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 370,
+        "keyword_name": "lblDailyTracking",
+        "keyword_value": "تتبع التقدم اليومي"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 371,
+        "keyword_name": "lblStpCnt",
+        "keyword_value": "عدد الخطوات"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 372,
+        "keyword_name": "lblWtrInt",
+        "keyword_value": "كمية الماء"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 373,
+        "keyword_name": "lblGlass",
+        "keyword_value": "كوب"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 374,
+        "keyword_name": "lblStpTrack",
+        "keyword_value": "متتبع الخطوات"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 375,
+        "keyword_name": "lblStpC1",
+        "keyword_value": "خطوات متبقية للوصول إلى هدفك!!!"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 376,
+        "keyword_name": "lblOnly",
+        "keyword_value": "فقط"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 377,
+        "keyword_name": "lblStpC2",
+        "keyword_value": "رائع! لقد وصلت إلى هدفك اليومي"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 378,
+        "keyword_name": "lblStpC3",
+        "keyword_value": "يرجى تحديد هدفك أولاً"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 379,
+        "keyword_name": "lblStpC4",
+        "keyword_value": "مذهل! تجاوزت هدفك بمقدار"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 380,
+        "keyword_name": "lblDG",
+        "keyword_value": "الهدف اليومي"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 381,
+        "keyword_name": "lblWtrTrack",
+        "keyword_value": "متتبع الماء"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 382,
+        "keyword_name": "lblGoalC1",
+        "keyword_value": "أكواب متبقية للوصول إلى هدفك!!!"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 383,
+        "keyword_name": "lblGlasses",
+        "keyword_value": "أكواب"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 384,
+        "keyword_name": "lblLogNw",
+        "keyword_value": "سجّل الآن"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 385,
+        "keyword_name": "lblEnrGls",
+        "keyword_value": "أدخل عدد الأكواب"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 386,
+        "keyword_name": "lblWtrConsDaily",
+        "keyword_value": "استهلاك الماء"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 387,
+        "keyword_name": "assignedWorkouts",
+        "keyword_value": "التمارين المخصصة"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 388,
+        "keyword_name": "assignedDiet",
+        "keyword_value": "النظام الغذائي المخصص"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 460,
+        "keyword_name": "lblSetGoalInsights",
+        "keyword_value": "حدّد هدفك اليومي للحصول على رؤى أفضل."
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 461,
+        "keyword_name": "lblSetWaterGoal",
+        "keyword_value": "تحديد هدف الماء"
+      },
+      {
+        "screenId": "8",
+        "keyword_id": 462,
+        "keyword_name": "lblSetStepGoal",
+        "keyword_value": "تحديد هدف الخطوات"
+      }
+    ]
+  },
+  {
+    "screenID": "9",
+    "ScreenName": "EditProfileScreen",
+    "keyword_data": [
+      {
+        "screenId": "9",
+        "keyword_id": 58,
+        "keyword_name": "lblEditProfile",
+        "keyword_value": "تعديل الملف الشخصي"
+      },
+      {
+        "screenId": "9",
+        "keyword_id": 59,
+        "keyword_name": "lblAge",
+        "keyword_value": "العمر"
+      },
+      {
+        "screenId": "9",
+        "keyword_id": 60,
+        "keyword_name": "lblEnterAge",
+        "keyword_value": "أدخل العمر"
+      },
+      {
+        "screenId": "9",
+        "keyword_id": 61,
+        "keyword_name": "lblGender",
+        "keyword_value": "الجنس"
+      },
+      {
+        "screenId": "9",
+        "keyword_id": 62,
+        "keyword_name": "lblSave",
+        "keyword_value": "حفظ"
+      },
+      {
+        "screenId": "9",
+        "keyword_id": 215,
+        "keyword_name": "lblTipsInst",
+        "keyword_value": "نصائح وتعليمات"
+      }
+    ]
+  },
+  {
+    "screenID": "10",
+    "ScreenName": "NotificationScreen",
+    "keyword_data": [
+      {
+        "screenId": "10",
+        "keyword_id": 63,
+        "keyword_name": "lblNotifications",
+        "keyword_value": "الإشعارات"
+      },
+      {
+        "screenId": "10",
+        "keyword_id": 64,
+        "keyword_name": "lblNotificationEmpty",
+        "keyword_value": "لا توجد إشعارات جديدة"
+      },
+      {
+        "screenId": "10",
+        "keyword_id": 210,
+        "keyword_name": "lblRepeat",
+        "keyword_value": "تكرار"
+      }
+    ]
+  },
+  {
+    "screenID": "11",
+    "ScreenName": "SearchScreen",
+    "keyword_data": [
+      {
+        "screenId": "11",
+        "keyword_id": 65,
+        "keyword_name": "lblSearchExercise",
+        "keyword_value": "بحث عن تمرين"
+      },
+      {
+        "screenId": "11",
+        "keyword_id": 66,
+        "keyword_name": "lblExerciseNoFound",
+        "keyword_value": "عذراً، لم يتم العثور على تمرين"
+      },
+      {
+        "screenId": "11",
+        "keyword_id": 67,
+        "keyword_name": "lblAll",
+        "keyword_value": "الكل"
+      },
+      {
+        "screenId": "11",
+        "keyword_id": 68,
+        "keyword_name": "lblNoFoundData",
+        "keyword_value": "لا توجد بيانات"
+      },
+      {
+        "screenId": "11",
+        "keyword_id": 69,
+        "keyword_name": "lblDuration",
+        "keyword_value": "المدة"
+      }
+    ]
+  },
+  {
+    "screenID": "12",
+    "ScreenName": "SubscribeScreen",
+    "keyword_data": [
+      {
+        "screenId": "12",
+        "keyword_id": 70,
+        "keyword_name": "lblProgramTitle",
+        "keyword_value": "البرامج"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 71,
+        "keyword_name": "lblProgramTitle1",
+        "keyword_value": "اختر البرنامج المناسب لأهدافك"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 72,
+        "keyword_name": "lblMonth",
+        "keyword_value": "شهر"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 73,
+        "keyword_name": "lblYear",
+        "keyword_value": "سنة"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 74,
+        "keyword_name": "lblSubscribe",
+        "keyword_value": "اشترك"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 75,
+        "keyword_name": "lblSelectPlanToContinue",
+        "keyword_value": "اختر برنامجاً للمتابعة"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 76,
+        "keyword_name": "lblSubscriptionPlans",
+        "keyword_value": "البرامج"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 77,
+        "keyword_name": "lblActive",
+        "keyword_value": "نشط"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 78,
+        "keyword_name": "lblHistory",
+        "keyword_value": "السجل"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 79,
+        "keyword_name": "lblSubscriptionMsg",
+        "keyword_value": "لم تشترك بعد"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 80,
+        "keyword_name": "lblViewPlans",
+        "keyword_value": "عرض البرامج"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 81,
+        "keyword_name": "lblYourPlanValid",
+        "keyword_value": "برنامجك ساري"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 82,
+        "keyword_name": "lblCancelSubscription",
+        "keyword_value": "إلغاء الاشتراك"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 83,
+        "keyword_name": "lblTo",
+        "keyword_value": "أبرز قراءات اللياقة"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 201,
+        "keyword_name": "lblBuyNow",
+        "keyword_value": "اشترِ الآن"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 203,
+        "keyword_name": "lblBmi",
+        "keyword_value": "مؤشر كتلة الجسم"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 536,
+        "keyword_name": "lblFollowUp",
+        "keyword_value": "المتابعة"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 537,
+        "keyword_name": "lblFollowUpTooltip",
+        "keyword_value": "تتيح المتابعة مراقبة المدرب لتتبع تقدمك خلال البرنامج"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 538,
+        "keyword_name": "lblConfirm",
+        "keyword_value": "تأكيد"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 539,
+        "keyword_name": "lblFoodRecognitionLimit",
+        "keyword_value": "محاولات التعرف على الطعام"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 540,
+        "keyword_name": "lblTotal",
+        "keyword_value": "الإجمالي"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 541,
+        "keyword_name": "lblProgramPrice",
+        "keyword_value": "سعر البرنامج"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 542,
+        "keyword_name": "lblName",
+        "keyword_value": "الاسم"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 543,
+        "keyword_name": "lblPrice",
+        "keyword_value": "السعر"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 544,
+        "keyword_name": "lblDurationUnit",
+        "keyword_value": "وحدة المدة"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 545,
+        "keyword_name": "lblAdvice",
+        "keyword_value": "نصيحة"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 546,
+        "keyword_name": "lblEnterProgram",
+        "keyword_value": "الدخول إلى البرنامج"
+      },
+      {
+        "screenId": "12",
+        "keyword_id": 547,
+        "keyword_name": "lblExercises",
+        "keyword_value": "التمارين"
+      }
+    ]
+  },
+  {
+    "screenID": "13",
+    "ScreenName": "ExerciseDetailScreen",
+    "keyword_data": [
+      {
+        "screenId": "13",
+        "keyword_id": 84,
+        "keyword_name": "lblNoSetsMsg",
+        "keyword_value": "لا يمكن المتابعة بسبب المجموعات الفارغة"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 85,
+        "keyword_name": "lblStartExercise",
+        "keyword_value": "ابدأ التمرين"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 86,
+        "keyword_name": "lblBodyParts",
+        "keyword_value": "أجزاء الجسم"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 87,
+        "keyword_name": "lblEquipments",
+        "keyword_value": "أدوات التدريب"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 218,
+        "keyword_name": "lblSets",
+        "keyword_value": "مجموعات"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 219,
+        "keyword_name": "lblReps",
+        "keyword_value": "تكرارات"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 220,
+        "keyword_name": "lblSecond",
+        "keyword_value": "ثانية"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 222,
+        "keyword_name": "lblTenSecondRemaining",
+        "keyword_value": "متبقي عشر ثوانٍ"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 223,
+        "keyword_name": "lblThree",
+        "keyword_value": "ثلاثة"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 224,
+        "keyword_name": "lblTwo",
+        "keyword_value": "اثنان"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 225,
+        "keyword_name": "lblOne",
+        "keyword_value": "واحد"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 226,
+        "keyword_name": "lblEnterReminderName",
+        "keyword_value": "أدخل اسم التذكير"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 227,
+        "keyword_name": "lblEnterDescription",
+        "keyword_value": "أدخل الوصف"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 389,
+        "keyword_name": "resetExercise",
+        "keyword_value": "إعادة تعيين التمرين"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 390,
+        "keyword_name": "lblComplete",
+        "keyword_value": "إكمال"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 391,
+        "keyword_name": "lblUpNext",
+        "keyword_value": "التالي"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 392,
+        "keyword_name": "confirmCompleteExercise",
+        "keyword_value": "هل أنت متأكد من رغبتك في إكمال هذا التمرين؟"
+      },
+      {
+        "screenId": "13",
+        "keyword_id": 240,
+        "keyword_name": "lblExerciseDone",
+        "keyword_value": "تم التمرين"
+      }
+    ]
+  },
+  {
+    "screenID": "14",
+    "ScreenName": "PaymentScreen",
+    "keyword_data": [
+      {
+        "screenId": "14",
+        "keyword_id": 88,
+        "keyword_name": "lblSuccess",
+        "keyword_value": "نجاح"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 89,
+        "keyword_name": "lblSuccessMsg",
+        "keyword_value": "تم بنجاح :)"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 90,
+        "keyword_name": "lblPaymentFailed",
+        "keyword_value": "فشل الدفع"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 91,
+        "keyword_name": "lblPayments",
+        "keyword_value": "المدفوعات"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 92,
+        "keyword_name": "lblPay",
+        "keyword_value": "ادفع"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 294,
+        "keyword_name": "lblFailed",
+        "keyword_value": "فشل"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 295,
+        "keyword_name": "lblPaymentSuccessful",
+        "keyword_value": "تم الدفع بنجاح!"
+      },
+      {
+        "screenId": "14",
+        "keyword_id": 296,
+        "keyword_name": "lblPaymentCancelled",
+        "keyword_value": "تم إلغاء الدفع!"
+      }
+    ]
+  },
+  {
+    "screenID": "15",
+    "ScreenName": "FilterWorkoutScreen",
+    "keyword_data": [
+      {
+        "screenId": "15",
+        "keyword_id": 92,
+        "keyword_name": "lblWorkoutType",
+        "keyword_value": "نوع التمرين"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 93,
+        "keyword_name": "lblWorkoutLevel",
+        "keyword_value": "مستوى التمرين"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 204,
+        "keyword_name": "lblFullBodyWorkout",
+        "keyword_value": "تمرين الجسم بالكامل"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 205,
+        "keyword_name": "lblTypes",
+        "keyword_value": "الأنواع"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 206,
+        "keyword_name": "lblClearAll",
+        "keyword_value": "إلغاء الكل"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 207,
+        "keyword_name": "lblSelectAll",
+        "keyword_value": "تحديد الكل"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 208,
+        "keyword_name": "lblShowResult",
+        "keyword_value": "عرض النتيجة"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 209,
+        "keyword_name": "lblSelectLevels",
+        "keyword_value": "اختر المستويات"
+      },
+      {
+        "screenId": "15",
+        "keyword_id": 221,
+        "keyword_name": "lblWorkoutNoFound",
+        "keyword_value": "عذراً، لم يتم العثور على تمرين"
+      }
+    ]
+  },
+  {
+    "screenID": "16",
+    "ScreenName": "DietScreen",
+    "keyword_data": [
+      {
+        "screenId": "16",
+        "keyword_id": 94,
+        "keyword_name": "lblDietCategories",
+        "keyword_value": "فئات النظام الغذائي"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 95,
+        "keyword_name": "lblBestDietDiscoveries",
+        "keyword_value": "أفضل اكتشافات الأنظمة الغذائية"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 96,
+        "keyword_name": "lblDietaryOptions",
+        "keyword_value": "خيارات غذائية"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 97,
+        "keyword_name": "lblResultNoFound",
+        "keyword_value": "عذراً، لم يتم العثور على نتائج"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 363,
+        "keyword_name": "disclaimer",
+        "keyword_value": "إخلاء المسؤولية"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 364,
+        "keyword_name": "viewSourceReference",
+        "keyword_value": "عرض المصادر والمراجع"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 365,
+        "keyword_name": "sourceReference",
+        "keyword_value": "المصادر والمراجع"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 366,
+        "keyword_name": "close",
+        "keyword_value": "إغلاق"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 367,
+        "keyword_name": "dietDisclaimerNote",
+        "keyword_value": "يقدّم هذا التطبيق معلومات عامة عن الصحة والتغذية وليس بديلاً عن الاستشارة الطبية المتخصصة. "
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 368,
+        "keyword_name": "dietDisclaimerNote2",
+        "keyword_value": " تختلف الاحتياجات الغذائية من شخص لآخر، ويُنصح باستشارة مختص صحي قبل إجراء تغييرات غذائية كبيرة."
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 369,
+        "keyword_name": "dietDisclaimerNote3",
+        "keyword_value": " المعلومات المعروضة مبنية على أبحاث متاحة ولا تُعد نصيحة طبية."
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 523,
+        "keyword_name": "lblCalorieCalculator",
+        "keyword_value": "حاسبة السعرات الحرارية"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 524,
+        "keyword_name": "lblCalculateCalories",
+        "keyword_value": "احسب السعرات الحرارية"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 525,
+        "keyword_name": "lblFoodRecognitionHistory",
+        "keyword_value": "سجل مسح السعرات"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 526,
+        "keyword_name": "lblSelectImageSource",
+        "keyword_value": "اختر مصدر الصورة"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 528,
+        "keyword_name": "lblGallery",
+        "keyword_value": "المعرض"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 529,
+        "keyword_name": "lblNoFoodHistory",
+        "keyword_value": "لا يوجد سجل بعد. اضغط الزر لبدء المسح"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 530,
+        "keyword_name": "lblFoodRecognitionResult",
+        "keyword_value": "نتيجة التعرف على الطعام"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 531,
+        "keyword_name": "lblFoodNotRecognized",
+        "keyword_value": "لم يتم التعرف على الطعام"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 532,
+        "keyword_name": "lblOtherSuggestions",
+        "keyword_value": "اقتراحات أخرى"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 533,
+        "keyword_name": "lblConfidence",
+        "keyword_value": "مستوى الثقة"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 534,
+        "keyword_name": "lblRemainingRequests",
+        "keyword_value": "الطلبات المتبقية"
+      },
+      {
+        "screenId": "16",
+        "keyword_id": 535,
+        "keyword_name": "lblCalorieCalculatorDesc",
+        "keyword_value": "صوّر طعامك واحسب السعرات الحرارية"
+      }
+    ]
+  },
+  {
+    "screenID": "17",
+    "ScreenName": "ProductScreen",
+    "keyword_data": [
+      {
+        "screenId": "17",
+        "keyword_id": 98,
+        "keyword_name": "lblProductCategory",
+        "keyword_value": "فئة إكسسوارات اللياقة"
+      },
+      {
+        "screenId": "17",
+        "keyword_id": 99,
+        "keyword_name": "lblProductList",
+        "keyword_value": "إكسسوارات اللياقة"
+      },
+      {
+        "screenId": "17",
+        "keyword_id": 100,
+        "keyword_name": "lblBreak",
+        "keyword_value": "استراحة ممتعة 😊"
+      }
+    ]
+  },
+  {
+    "screenID": "18",
+    "ScreenName": "ProgressScreen",
+    "keyword_data": [
+      {
+        "screenId": "18",
+        "keyword_id": 101,
+        "keyword_name": "lblHeartRate",
+        "keyword_value": "معدل ضربات القلب"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 102,
+        "keyword_name": "lblPushUp",
+        "keyword_value": "تمارين الضغط في دقيقة واحدة"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 103,
+        "keyword_name": "lblupdate",
+        "keyword_value": "تحديث"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 104,
+        "keyword_name": "lblHint",
+        "keyword_value": "50"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 105,
+        "keyword_name": "lblDate",
+        "keyword_value": "التاريخ"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 106,
+        "keyword_name": "lblDelete",
+        "keyword_value": "حذف"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 107,
+        "keyword_name": "lblDeleteAccountMSg",
+        "keyword_value": "هل أنت متأكد من رغبتك في حذف"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 108,
+        "keyword_name": "lblDeleteMsg",
+        "keyword_value": "هل أنت متأكد من رغبتك في حذف حسابك نهائياً؟"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 109,
+        "keyword_name": "lblDeleteAccount",
+        "keyword_value": "حذف الحساب"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 216,
+        "keyword_name": "lblAdd",
+        "keyword_value": "إضافة"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 239,
+        "keyword_name": "lblSteps",
+        "keyword_value": "الخطوات"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 395,
+        "keyword_name": "lblGoal",
+        "keyword_value": "الهدف"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 396,
+        "keyword_name": "lblAchived",
+        "keyword_value": "المُنجَز"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 397,
+        "keyword_name": "lblConsumed",
+        "keyword_value": "المستهلك"
+      },
+      {
+        "screenId": "18",
+        "keyword_id": 398,
+        "keyword_name": "valueGreaterZero",
+        "keyword_value": "يجب أن تكون القيمة أكبر من 0"
+      }
+    ]
+  },
+  {
+    "screenID": "19",
+    "ScreenName": "ProfileScreen",
+    "keyword_data": [
+      {
+        "screenId": "19",
+        "keyword_id": 110,
+        "keyword_name": "lblBlog",
+        "keyword_value": "المدونة"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 111,
+        "keyword_name": "lblFavoriteWorkoutAndNutristions",
+        "keyword_value": "التمارين والتغذية المفضلة"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 112,
+        "keyword_name": "lblDailyReminders",
+        "keyword_value": "التذكيرات اليومية"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 113,
+        "keyword_name": "lblPlan",
+        "keyword_value": "التمرين والنظام الغذائي المعيّن"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 114,
+        "keyword_name": "lblSettings",
+        "keyword_value": "الإعدادات"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 115,
+        "keyword_name": "lblAboutApp",
+        "keyword_value": "حول التطبيق"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 116,
+        "keyword_name": "lblLogout",
+        "keyword_value": "تسجيل الخروج"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 117,
+        "keyword_name": "lblLogoutMsg",
+        "keyword_value": "هل أنت متأكد من رغبتك في تسجيل الخروج الآن؟"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 118,
+        "keyword_name": "lblPrivacyPolicy",
+        "keyword_value": "سياسة الخصوصية"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 119,
+        "keyword_name": "lblTermsOfServices",
+        "keyword_value": "شروط الخدمة"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 120,
+        "keyword_name": "lblAboutUs",
+        "keyword_value": "من نحن"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 121,
+        "keyword_name": "lblTopFitnessReads",
+        "keyword_value": "أبرز قراءات اللياقة"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 122,
+        "keyword_name": "lblTrendingBlogs",
+        "keyword_value": "المقالات الرائجة"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 123,
+        "keyword_name": "lblBlogNoFound",
+        "keyword_value": "عذراً، لم يتم العثور على مقال"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 124,
+        "keyword_name": "lblFollowUs",
+        "keyword_value": "تابعنا"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 211,
+        "keyword_name": "lblEveryday",
+        "keyword_value": "كل يوم"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 212,
+        "keyword_name": "lblReminderName",
+        "keyword_value": "اسم التذكير"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 213,
+        "keyword_name": "lblDescription",
+        "keyword_value": "الوصف"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 354,
+        "keyword_name": "lblPostBmk",
+        "keyword_value": "إشارة مرجعية للمقال"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 355,
+        "keyword_name": "lblWOHtr",
+        "keyword_value": "سجل التمارين"
+      },
+      {
+        "screenId": "19",
+        "keyword_id": 393,
+        "keyword_name": "lblExerHtr",
+        "keyword_value": "سجل التمارين"
+      }
+    ]
+  },
+  {
+    "screenID": "20",
+    "ScreenName": "SettingScreen",
+    "keyword_data": [
+      {
+        "screenId": "20",
+        "keyword_id": 125,
+        "keyword_name": "lblMetricsSettings",
+        "keyword_value": "إعدادات المقاييس"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 126,
+        "keyword_name": "lblSelectLanguage",
+        "keyword_value": "اختر اللغة"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 127,
+        "keyword_name": "lblAppThemes",
+        "keyword_value": "سمات التطبيق"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 128,
+        "keyword_name": "lblChangePassword",
+        "keyword_value": "تغيير كلمة المرور"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 129,
+        "keyword_name": "lblLight",
+        "keyword_value": "فاتح"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 130,
+        "keyword_name": "lblDark",
+        "keyword_value": "داكن"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 131,
+        "keyword_name": "lblSystemDefault",
+        "keyword_value": "افتراضي النظام"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 132,
+        "keyword_name": "lblSelectTheme",
+        "keyword_value": "السمة"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 133,
+        "keyword_name": "lblCurrentPassword",
+        "keyword_value": "كلمة المرور الحالية"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 134,
+        "keyword_name": "lblEnterCurrentPwd",
+        "keyword_value": "أدخل كلمة المرور الحالية"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 135,
+        "keyword_name": "lblNewPassword",
+        "keyword_value": "كلمة المرور الجديدة"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 136,
+        "keyword_name": "lblPasswordMsg",
+        "keyword_value": "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمة المرور القديمة"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 137,
+        "keyword_name": "lblEnterNewPwd",
+        "keyword_value": "أدخل كلمة المرور الجديدة"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 139,
+        "keyword_name": "lblSubmit",
+        "keyword_value": "إرسال"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 140,
+        "keyword_name": "lblIdealWeight",
+        "keyword_value": "الوزن المثالي"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 141,
+        "keyword_name": "lblBmr",
+        "keyword_value": "BMR"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 142,
+        "keyword_name": "lblTotalSteps",
+        "keyword_value": "إجمالي الخطوات"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 200,
+        "keyword_name": "lblForgotPwdMsg",
+        "keyword_value": "يرجى إدخال بريدك الإلكتروني لطلب إعادة تعيين كلمة المرور"
+      },
+      {
+        "screenId": "20",
+        "keyword_id": 236,
+        "keyword_name": "lblCancel",
+        "keyword_value": "إلغاء"
+      }
+    ]
+  },
+  {
+    "screenID": "21",
+    "ScreenName": "ChattingImageScreen",
+    "keyword_data": [
+      {
+        "screenId": "21",
+        "keyword_id": 143,
+        "keyword_name": "lblChatConfirmMsg",
+        "keyword_value": "هل تريد مسح المحادثات؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 144,
+        "keyword_name": "lblYes",
+        "keyword_value": "نعم"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 145,
+        "keyword_name": "lblNo",
+        "keyword_value": "لا"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 146,
+        "keyword_name": "lblFitBot",
+        "keyword_value": "FitBot"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 147,
+        "keyword_name": "lblClearConversion",
+        "keyword_value": "مسح المحادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 148,
+        "keyword_name": "lblChatHintText",
+        "keyword_value": "كيف يمكنني مساعدتك..."
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 149,
+        "keyword_name": "lblCopiedToClipboard",
+        "keyword_value": "تم النسخ إلى الحافظة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 150,
+        "keyword_name": "lblQue1",
+        "keyword_value": "كيف أبدأ روتين لياقة كمبتدئ؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 151,
+        "keyword_name": "lblQue2",
+        "keyword_value": "ما نصائح التغذية الصحية للياقة وإدارة الوزن؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 152,
+        "keyword_name": "lblQue3",
+        "keyword_value": "ما أفضل طريقة لخسارة الوزن من خلال التمارين والنظام الغذائي؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 153,
+        "keyword_name": "lblG",
+        "keyword_value": "g"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 154,
+        "keyword_name": "lblMainGoal",
+        "keyword_value": "ما هو هدفك الرئيسي؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 155,
+        "keyword_name": "lblHowExperienced",
+        "keyword_value": "ما مستوى خبرتك في اللياقة؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 157,
+        "keyword_name": "lblHoweEquipment",
+        "keyword_value": "ما أدوات التدريب المتوفرة لديك؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 158,
+        "keyword_name": "lblHoweOftenWorkout",
+        "keyword_value": "كم مرة تريد التمرّن؟"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 245,
+        "keyword_name": "lblFinish",
+        "keyword_value": "إنهاء"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 160,
+        "keyword_name": "lblProgression",
+        "keyword_value": "التقدّم"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 161,
+        "keyword_name": "lblEasyHabit",
+        "keyword_value": "سهل لتكوين عادة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 162,
+        "keyword_name": "lblRecommend",
+        "keyword_value": "نوصي بـ"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 163,
+        "keyword_name": "lblTimesWeek",
+        "keyword_value": "مرات/أسبوع تريد التمرّن"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 164,
+        "keyword_name": "lblOnlyTimesWeek",
+        "keyword_value": "مرات/أسبوع"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 165,
+        "keyword_name": "lblUsernameShouldNotContainSpace",
+        "keyword_value": "يجب ألا يحتوي اسم المستخدم على مسافة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 166,
+        "keyword_name": "lblMinimumPasswordLengthShouldBe",
+        "keyword_value": "يجب أن يكون الحد الأدنى لطول كلمة المرور"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 167,
+        "keyword_name": "lblInternetIsConnected",
+        "keyword_value": "الإنترنت متصل."
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 168,
+        "keyword_name": "lblNoDurationMsg",
+        "keyword_value": "لا يمكن المتابعة بسبب مدة فارغة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 170,
+        "keyword_name": "lblErrorNotAllow",
+        "keyword_value": "عذرًا، غير مسموح لك"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 171,
+        "keyword_name": "lblPleaseTryAgain",
+        "keyword_value": "يرجى المحاولة مرة أخرى"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 172,
+        "keyword_name": "lblInvalidUrl",
+        "keyword_value": "رابط غير صالح"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 173,
+        "keyword_name": "lblCalories",
+        "keyword_value": "السعرات الحرارية"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 174,
+        "keyword_name": "lblCarbs",
+        "keyword_value": "الكربوهيدرات"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 175,
+        "keyword_name": "lblFat",
+        "keyword_value": "الدهون"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 176,
+        "keyword_name": "lblProtein",
+        "keyword_value": "البروتين"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 178,
+        "keyword_name": "lblKcal",
+        "keyword_value": "Kcal"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 179,
+        "keyword_name": "lblIngredients",
+        "keyword_value": "المكونات"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 180,
+        "keyword_name": "lblInstruction",
+        "keyword_value": "التعليمات"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 181,
+        "keyword_name": "lblNoInternet",
+        "keyword_value": "لا يوجد إنترنت"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 234,
+        "keyword_name": "lblFavourite",
+        "keyword_value": "المفضلة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 235,
+        "keyword_name": "lblStore",
+        "keyword_value": "المتجر"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 237,
+        "keyword_name": "lblPro",
+        "keyword_value": "Pro"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 283,
+        "keyword_name": "lblNoConversationFound",
+        "keyword_value": "لم يتم العثور على محادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 284,
+        "keyword_name": "lblViewContact",
+        "keyword_value": "عرض جهة الاتصال"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 285,
+        "keyword_name": "lblUnblock",
+        "keyword_value": "إلغاء الحظر"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 286,
+        "keyword_name": "lblBlock",
+        "keyword_value": "حظر"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 287,
+        "keyword_name": "lblClearChat",
+        "keyword_value": "مسح المحادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 288,
+        "keyword_name": "lblChatCleared",
+        "keyword_value": "تم مسح المحادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 289,
+        "keyword_name": "lblBlockMsg",
+        "keyword_value": "لن يتمكن جهة الاتصال المحظورة من الاتصال بك أو إرسال رسائل إليك."
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 290,
+        "keyword_name": "lblOnline",
+        "keyword_value": "متصل"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 291,
+        "keyword_name": "lblLastSeen",
+        "keyword_value": "آخر ظهور"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 292,
+        "keyword_name": "lblSearchHere",
+        "keyword_value": "ابحث هنا"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 293,
+        "keyword_name": "lblNewChat",
+        "keyword_value": "محادثة جديدة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 297,
+        "keyword_name": "lblDeleteChat",
+        "keyword_value": "حذف المحادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 298,
+        "keyword_name": "lblDeleteDialogTitle",
+        "keyword_value": "سيتم مسح وحذف جميع المحادثات"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 299,
+        "keyword_name": "lblChatDeleted",
+        "keyword_value": "تم حذف المحادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 300,
+        "keyword_name": "lblDeleteMessage",
+        "keyword_value": "حذف الرسالة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 301,
+        "keyword_name": "lblChat",
+        "keyword_value": "محادثة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 302,
+        "keyword_name": "lblMinRead",
+        "keyword_value": "دقيقة قراءة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 305,
+        "keyword_name": "lblToSendMsg",
+        "keyword_value": "لإرسال رسالة"
+      },
+      {
+        "screenId": "21",
+        "keyword_id": 306,
+        "keyword_name": "lblMsg",
+        "keyword_value": "رسالة"
+      }
+    ]
+  },
+  {
+    "screenID": "22",
+    "ScreenName": "OTPScreen",
+    "keyword_data": [
+      {
+        "screenId": "22",
+        "keyword_id": 190,
+        "keyword_name": "lblContinueWithPhone",
+        "keyword_value": "المتابعة برقم الهاتف"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 191,
+        "keyword_name": "lblRcvCode",
+        "keyword_value": "ستتلقى رمزًا مكونًا من 6 أرقام للتحقق لاحقًا."
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 192,
+        "keyword_name": "lblVerifyOTP",
+        "keyword_value": "التحقق عبر OTP"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 193,
+        "keyword_name": "lblVerifyProceed",
+        "keyword_value": "تحقق ومتابعة"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 194,
+        "keyword_name": "lblCode",
+        "keyword_value": "لقد أرسلنا رمز التحقق إلى"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 195,
+        "keyword_name": "lblMonthly",
+        "keyword_value": "شهري"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 214,
+        "keyword_name": "lblFav",
+        "keyword_value": "التمارين والتغذية المفضلة"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 217,
+        "keyword_name": "lblEnterText",
+        "keyword_value": "يرجى إدخال نص"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 228,
+        "keyword_name": "lblErrorThisFiledIsRequired",
+        "keyword_value": "هذا الحقل مطلوب"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 229,
+        "keyword_name": "lblSomethingWentWrong",
+        "keyword_value": "حدث خطأ ما"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 230,
+        "keyword_name": "lblErrorInternetNotAvailable",
+        "keyword_value": "الإنترنت لديك لا يعمل"
+      },
+      {
+        "screenId": "22",
+        "keyword_id": 233,
+        "keyword_name": "lblContinue",
+        "keyword_value": "متابعة"
+      }
+    ]
+  },
+  {
+    "screenID": "23",
+    "ScreenName": "ScheduleScreen",
+    "keyword_data": [
+      {
+        "screenId": "23",
+        "keyword_id": 242,
+        "keyword_name": "lblSchedule",
+        "keyword_value": "الجدول"
+      },
+      {
+        "screenId": "23",
+        "keyword_id": 243,
+        "keyword_name": "lblChangeView",
+        "keyword_value": "تغيير عرض التقويم"
+      },
+      {
+        "screenId": "23",
+        "keyword_id": 244,
+        "keyword_name": "lblJoin",
+        "keyword_value": "انضمام"
+      },
+      {
+        "screenId": "23",
+        "keyword_id": 303,
+        "keyword_name": "lblFree",
+        "keyword_value": "مجاني"
+      },
+      {
+        "screenId": "23",
+        "keyword_id": 304,
+        "keyword_name": "lblPurchases",
+        "keyword_value": "المشتريات"
+      }
+    ]
+  },
+  {
+    "screenID": "24",
+    "ScreenName": "CommunityScreen",
+    "keyword_data": [
+      {
+        "screenId": "24",
+        "keyword_id": 310,
+        "keyword_name": "lblCommunity",
+        "keyword_value": "المجتمع"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 311,
+        "keyword_name": "lblReportPost",
+        "keyword_value": "الإبلاغ عن هذا المنشور"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 312,
+        "keyword_name": "lblEditPost",
+        "keyword_value": "تعديل المنشور"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 313,
+        "keyword_name": "lblDeletePost",
+        "keyword_value": "هل أنت متأكد أنك تريد حذف هذا المنشور؟"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 314,
+        "keyword_name": "lblDelPost",
+        "keyword_value": "حذف المنشور"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 315,
+        "keyword_name": "gotoProfile",
+        "keyword_value": "الذهاب إلى الملف الشخصي"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 316,
+        "keyword_name": "lblNoPost",
+        "keyword_value": "لا توجد منشورات متاحة."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 317,
+        "keyword_name": "lblComments",
+        "keyword_value": "التعليقات"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 319,
+        "keyword_name": "lblReply",
+        "keyword_value": "رد"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 320,
+        "keyword_name": "lblViewR",
+        "keyword_value": "عرض الرد"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 321,
+        "keyword_name": "lblHideR",
+        "keyword_value": "إخفاء الرد"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 322,
+        "keyword_name": "lblUpComments",
+        "keyword_value": "تحديث التعليق"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 323,
+        "keyword_name": "lblAddComments",
+        "keyword_value": "أضف تعليقًا"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 324,
+        "keyword_name": "lblReports",
+        "keyword_value": "إبلاغ"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 325,
+        "keyword_name": "lblRepoDes",
+        "keyword_value": "وصف البلاغ"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 327,
+        "keyword_name": "lblRepo",
+        "keyword_value": "تم الإبلاغ:"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 328,
+        "keyword_name": "finishProfileSetting",
+        "keyword_value": "أكمل إعداد ملفك الشخصي"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 326,
+        "keyword_name": "lblChoseVideo",
+        "keyword_value": "اختر فيديو"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 329,
+        "keyword_name": "lblMaxVideoMsg",
+        "keyword_value": "حجم الفيديو يتجاوز 30 MB. يرجى اختيار فيديو أصغر."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 330,
+        "keyword_name": "lblNewPost",
+        "keyword_value": "منشور جديد"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 331,
+        "keyword_name": "WriteSomeThing",
+        "keyword_value": "اكتب شيئًا هنا...."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 332,
+        "keyword_name": "lblEditImg",
+        "keyword_value": "تعديل الصورة"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 333,
+        "keyword_name": "lblEditVid",
+        "keyword_value": "تعديل الفيديو"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 334,
+        "keyword_name": "lblSelectImg",
+        "keyword_value": "الصورة المحددة:"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 335,
+        "keyword_name": "lblSelectVid",
+        "keyword_value": "تم اختيار الفيديو بنجاح."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 336,
+        "keyword_name": "lblEmptyMsg",
+        "keyword_value": "يرجى إضافة محتوى"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 337,
+        "keyword_name": "lblAddImg",
+        "keyword_value": "إضافة صورة"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 338,
+        "keyword_name": "lblAddVid",
+        "keyword_value": "إضافة فيديو"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 339,
+        "keyword_name": "lblSharePost",
+        "keyword_value": "مشاركة المنشور"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 340,
+        "keyword_name": "lblCamera",
+        "keyword_value": "الكاميرا"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 341,
+        "keyword_name": "lblChoseImg",
+        "keyword_value": "اختر صورة"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 342,
+        "keyword_name": "lblRecord",
+        "keyword_value": "تسجيل"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 343,
+        "keyword_name": "lblPost",
+        "keyword_value": "نشر"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 344,
+        "keyword_name": "edtCmt",
+        "keyword_value": "تعديل التعليق"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 345,
+        "keyword_name": "edtRpl",
+        "keyword_value": "تعديل الرد"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 346,
+        "keyword_name": "dltRpl",
+        "keyword_value": "حذف الرد"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 347,
+        "keyword_name": "dltCmt",
+        "keyword_value": "حذف التعليق"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 348,
+        "keyword_name": "share",
+        "keyword_value": "مشاركة"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 349,
+        "keyword_name": "posted",
+        "keyword_value": "تم النشر"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 350,
+        "keyword_name": "lblCmt",
+        "keyword_value": "تعليق"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 351,
+        "keyword_name": "lblLike",
+        "keyword_value": "إعجاب"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 352,
+        "keyword_name": "lblLikes",
+        "keyword_value": "إعجابات"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 353,
+        "keyword_name": "lblUMedia",
+        "keyword_value": "رفع وسائط"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 356,
+        "keyword_name": "lblOpen",
+        "keyword_value": "فتح"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 357,
+        "keyword_name": "lblPermissionDescription",
+        "keyword_value": "يلزم إذن الوصول إلى الوسائط لاختيار الملفات. يُرجى تفعيله من الإعدادات."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 358,
+        "keyword_name": "confirmDeleteComment",
+        "keyword_value": "هل أنت متأكد أنك تريد حذف تعليقك؟"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 359,
+        "keyword_name": "confirmDeleteCommentReply",
+        "keyword_value": "هل أنت متأكد أنك تريد حذف ردك على التعليق؟"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 360,
+        "keyword_name": "checkOutPost",
+        "keyword_value": "اطّلع على منشورنا:"
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 361,
+        "keyword_name": "readMore",
+        "keyword_value": "اقرأ المزيد.."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 362,
+        "keyword_name": "readLess",
+        "keyword_value": "اقرأ أقل.."
+      },
+      {
+        "screenId": "24",
+        "keyword_id": 394,
+        "keyword_name": "lblPosts",
+        "keyword_value": "المنشورات"
+      }
+    ]
+  },
+  {
+    "screenID": "25",
+    "ScreenName": "DailyPlanScreen",
+    "keyword_data": [
+      {
+        "screenId": "25",
+        "keyword_id": 399,
+        "keyword_name": "lblQuantity",
+        "keyword_value": "الكمية"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 400,
+        "keyword_name": "lblServing",
+        "keyword_value": "حصة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 401,
+        "keyword_name": "lblRecipesteps",
+        "keyword_value": "خطوات الوصفة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 403,
+        "keyword_name": "lblNorecipesfound",
+        "keyword_value": "لم يتم العثور على وصفات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 404,
+        "keyword_name": "lblMeals",
+        "keyword_value": "الوجبات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 405,
+        "keyword_name": "lblWater",
+        "keyword_value": "الماء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 406,
+        "keyword_name": "lblDoyouwantustorecalculateyourcaloriesandmacrosaccordingtoyournewinformation",
+        "keyword_value": "هل تريد منا إعادة حساب السعرات والماكروز وفقًا لمعلوماتك الجديدة؟"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 407,
+        "keyword_name": "lblNodatafound",
+        "keyword_value": "لم يتم العثور على بيانات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 408,
+        "keyword_name": "lblTitle",
+        "keyword_value": "العنوان"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 409,
+        "keyword_name": "lblReminders",
+        "keyword_value": "التذكيرات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 410,
+        "keyword_name": "lblTime",
+        "keyword_value": "الوقت"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 411,
+        "keyword_name": "lblBreakfast",
+        "keyword_value": "الإفطار"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 412,
+        "keyword_name": "lblSnacks",
+        "keyword_value": "الوجبات الخفيفة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 413,
+        "keyword_name": "lblLunch",
+        "keyword_value": "الغداء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 414,
+        "keyword_name": "lblDinner",
+        "keyword_value": "العشاء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 415,
+        "keyword_name": "lblStopcasting",
+        "keyword_value": "إيقاف البث"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 416,
+        "keyword_name": "lblEditlist",
+        "keyword_value": "تعديل القائمة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 417,
+        "keyword_name": "lblDeletelist",
+        "keyword_value": "حذف القائمة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 418,
+        "keyword_name": "lblAdditem",
+        "keyword_value": "إضافة عنصر"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 419,
+        "keyword_name": "lblItem",
+        "keyword_value": "عنصر"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 420,
+        "keyword_name": "lblUnit",
+        "keyword_value": "الوحدة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 421,
+        "keyword_name": "lblNone",
+        "keyword_value": "لا شيء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 422,
+        "keyword_name": "lblDeleteshoppinglist",
+        "keyword_value": "حذف قائمة التسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 423,
+        "keyword_name": "lblSpecificdate",
+        "keyword_value": "تاريخ محدد"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 424,
+        "keyword_name": "lblDate",
+        "keyword_value": "التاريخ:"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 425,
+        "keyword_name": "lblDaterange",
+        "keyword_value": "نطاق التاريخ:"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 426,
+        "keyword_name": "lblMealtypes",
+        "keyword_value": "أنواع الوجبات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 427,
+        "keyword_name": "lblServings",
+        "keyword_value": "الحصص:"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 428,
+        "keyword_name": "lblIscompleteonly",
+        "keyword_value": "المكتملة فقط"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 429,
+        "keyword_name": "lblEvery",
+        "keyword_value": "كل"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 430,
+        "keyword_name": "lblFrom",
+        "keyword_value": "من"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 431,
+        "keyword_name": "lblUntil",
+        "keyword_value": "حتى"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 432,
+        "keyword_name": "lblAt",
+        "keyword_value": "في"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 433,
+        "keyword_name": "lblMealswater",
+        "keyword_value": "الوجبات والماء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 434,
+        "keyword_name": "lblGenerateshoppinglist",
+        "keyword_value": "إنشاء قائمة تسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 435,
+        "keyword_name": "lblChoosewhichplannedmealstoinclude",
+        "keyword_value": "اختر الوجبات المخططة التي تريد تضمينها."
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 436,
+        "keyword_name": "lblCancel",
+        "keyword_value": "إلغاء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 437,
+        "keyword_name": "lblSelectaspecificdate",
+        "keyword_value": "اختر تاريخًا محددًا"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 438,
+        "keyword_name": "lblPickstartenddates",
+        "keyword_value": "اختر تاريخي البدء والانتهاء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 439,
+        "keyword_name": "lblTags",
+        "keyword_value": "الوسوم"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 440,
+        "keyword_name": "lblCategories",
+        "keyword_value": "الفئات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 441,
+        "keyword_name": "lblRecipes",
+        "keyword_value": "الوصفات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 442,
+        "keyword_name": "lblViewmore",
+        "keyword_value": "عرض المزيد"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 443,
+        "keyword_name": "lblWaterreminder",
+        "keyword_value": "تذكير شرب الماء"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 444,
+        "keyword_name": "lblDataaccessed",
+        "keyword_value": "البيانات التي تم الوصول إليها:"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 445,
+        "keyword_name": "lblStepcount",
+        "keyword_value": "عدد الخطوات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 446,
+        "keyword_name": "lblCompleteyourprofile",
+        "keyword_value": "أكمل ملفك الشخصي"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 447,
+        "keyword_name": "lblMightyfitness",
+        "keyword_value": "<YOUR_APP_NAME>"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 448,
+        "keyword_name": "lblAdloading",
+        "keyword_value": "جاري تحميل الإعلان..."
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 449,
+        "keyword_name": "lblDatafromapplehealth",
+        "keyword_value": "بيانات من Apple Health"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 450,
+        "keyword_name": "lblFilters",
+        "keyword_value": "الفلاتر"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 451,
+        "keyword_name": "lblClearday",
+        "keyword_value": "مسح اليوم"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 452,
+        "keyword_name": "lblAreyousureyouwanttocleartheentiredayplan",
+        "keyword_value": "هل أنت متأكد أنك تريد مسح خطة اليوم بالكامل؟"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 453,
+        "keyword_name": "lblWhichtypeofdietdoyouwant",
+        "keyword_value": "ما نوع النظام الغذائي الذي تريده؟"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 454,
+        "keyword_name": "lblDeleteall",
+        "keyword_value": "حذف الكل"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 455,
+        "keyword_name": "lblNihroleofdietinautoimmunediseases",
+        "keyword_value": "NIH - دور النظام الغذائي في أمراض المناعة الذاتية"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 456,
+        "keyword_name": "lblHarvardinflammatoryfoodsimpact",
+        "keyword_value": "Harvard - تأثير الأطعمة الالتهابية"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 457,
+        "keyword_name": "lblWhonutritionalguidelinesforillness",
+        "keyword_value": "WHO - الإرشادات الغذائية أثناء المرض"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 458,
+        "keyword_name": "lblFindadifferentcolortocheckbrainworkout",
+        "keyword_value": "اعثر على لون مختلف لاختبار تمرين العقل"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 459,
+        "keyword_name": "lblConfirmDeleteShoppingList",
+        "keyword_value": "هل أنت متأكد أنك تريد حذف قائمة التسوق هذه؟"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 468,
+        "keyword_name": "lblProteins",
+        "keyword_value": "البروتينات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 469,
+        "keyword_name": "lblCarbs",
+        "keyword_value": "الكربوهيدرات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 470,
+        "keyword_name": "lblFats",
+        "keyword_value": "الدهون"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 471,
+        "keyword_name": "lblPleaseselectadiettype",
+        "keyword_value": "يُرجى اختيار نوع النظام الغذائي"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 472,
+        "keyword_name": "lblRetry",
+        "keyword_value": "إعادة المحاولة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 473,
+        "keyword_name": "lblPleaseenteryourageweightandhei",
+        "keyword_value": "يُرجى إدخال عمرك ووزنك وطولك للوصول إلى هذه الميزة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 474,
+        "keyword_name": "plan",
+        "keyword_value": "الخطة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 475,
+        "keyword_name": "lblCastingnotsupported",
+        "keyword_value": "البث غير مدعوم"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 476,
+        "keyword_name": "lblDatasaved",
+        "keyword_value": "تم حفظ البيانات"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 477,
+        "keyword_name": "lblPleaseenteratitle",
+        "keyword_value": "يُرجى إدخال عنوان"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 478,
+        "keyword_name": "lblNodailyplanfoundforthisdate",
+        "keyword_value": "لم يتم العثور على خطة يومية لهذا التاريخ"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 479,
+        "keyword_name": "lblPleasewaitfordailyplantoload",
+        "keyword_value": "يُرجى الانتظار حتى يتم تحميل الخطة اليومية"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 480,
+        "keyword_name": "lblPleaseselectatleastonemealtype",
+        "keyword_value": "يُرجى اختيار نوع وجبة واحد على الأقل"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 481,
+        "keyword_name": "lblPleaseselectadaterange",
+        "keyword_value": "يُرجى اختيار نطاق تاريخ"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 482,
+        "keyword_name": "lblSelectday",
+        "keyword_value": "اختر اليوم"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 483,
+        "keyword_name": "lblFailed",
+        "keyword_value": "فشل"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 486,
+        "keyword_name": "lblMissingrequiredinformation",
+        "keyword_value": "معلومات مطلوبة ناقصة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 487,
+        "keyword_name": "lblStatusupdatedsuccessfully",
+        "keyword_value": "تم تحديث الحالة بنجاح"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 488,
+        "keyword_name": "lblRecipedeletedsuccessfully",
+        "keyword_value": "تم حذف الوصفة بنجاح"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 490,
+        "keyword_name": "lblDailyplanclearedsuccessfully",
+        "keyword_value": "تم مسح الخطة اليومية بنجاح"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 492,
+        "keyword_name": "lblInvalidrecipedata",
+        "keyword_value": "بيانات الوصفة غير صالحة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 493,
+        "keyword_name": "lblRecipeaddedsuccessfully",
+        "keyword_value": "تمت إضافة الوصفة بنجاح"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 494,
+        "keyword_name": "lblEditShoppingList",
+        "keyword_value": "تعديل قائمة التسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 495,
+        "keyword_name": "lblAddShoppingList",
+        "keyword_value": "إضافة قائمة تسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 496,
+        "keyword_name": "lblAddNewItemToYourShoppingList",
+        "keyword_value": "أضف عنصرًا جديدًا إلى قائمة التسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 497,
+        "keyword_name": "lblFailedToLoadVideo",
+        "keyword_value": "فشل تحميل الفيديو"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 498,
+        "keyword_name": "lblFailedToLoadImage",
+        "keyword_value": "فشل تحميل الصورة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 499,
+        "keyword_name": "lblReadLess",
+        "keyword_value": "اقرأ أقل"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 500,
+        "keyword_name": "lblReadMore",
+        "keyword_value": "اقرأ المزيد"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 501,
+        "keyword_name": "lblReplyTo",
+        "keyword_value": "رد على "
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 502,
+        "keyword_name": "lblApplyFilters",
+        "keyword_value": "تطبيق الفلاتر"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 503,
+        "keyword_name": "lblAppleHealthIntegration",
+        "keyword_value": "تكامل Apple Health"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 504,
+        "keyword_name": "lblConnectAppleHealth",
+        "keyword_value": "ربط Apple Health"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 505,
+        "keyword_name": "lblStepDataFromAppleHealth",
+        "keyword_value": "بيانات الخطوات من Apple Health"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 506,
+        "keyword_name": "lblTenSecondRemaining",
+        "keyword_value": "تبقى عشر ثوانٍ"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 507,
+        "keyword_name": "lblThreeSecondRemainingForRest",
+        "keyword_value": "تبقى ثلاث ثوانٍ للراحة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 508,
+        "keyword_name": "lblThreeSecondRemaining",
+        "keyword_value": "تبقى ثلاث ثوانٍ"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 509,
+        "keyword_name": "lblExerciseComplete",
+        "keyword_value": "اكتمل التمرين"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 510,
+        "keyword_name": "lblPayWithCard",
+        "keyword_value": "الدفع بالبطاقة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 511,
+        "keyword_name": "lblShoppingLists",
+        "keyword_value": "قوائم التسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 512,
+        "keyword_name": "lblNoShoppingListsFound",
+        "keyword_value": "لم يتم العثور على قوائم تسوق"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 513,
+        "keyword_name": "lblSimpleList",
+        "keyword_value": "قائمة بسيطة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 514,
+        "keyword_name": "lblCategorized",
+        "keyword_value": "مصنّفة"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 515,
+        "keyword_name": "lblEnterItemName",
+        "keyword_value": "أدخل اسم العنصر"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 516,
+        "keyword_name": "lblItemNameIsRequired",
+        "keyword_value": "اسم العنصر مطلوب"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 517,
+        "keyword_name": "lblGoalCaloriesMacros",
+        "keyword_value": "الهدف والسعرات والماكروز"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 518,
+        "keyword_name": "lblActivityLevel",
+        "keyword_value": "مستوى النشاط"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 519,
+        "keyword_name": "lblMacrosDietType",
+        "keyword_value": "الماكروز ونوع النظام الغذائي"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 520,
+        "keyword_name": "lblUpdatedSuccessfully",
+        "keyword_value": "تم التحديث بنجاح"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 521,
+        "keyword_name": "lblGeneric",
+        "keyword_value": "عام"
+      },
+      {
+        "screenId": "25",
+        "keyword_id": 522,
+        "keyword_name": "lblMarkThisRecipeAsCompleted",
+        "keyword_value": "تحديد هذه الوصفة كمكتملة"
+      }
+    ]
+  },
+  {
+    "screenID": "26",
+    "ScreenName": "SignUpStep5Component",
+    "keyword_data": [
+      {
+        "screenId": "26",
+        "keyword_id": 463,
+        "keyword_name": "lblWhatsYourGoal",
+        "keyword_value": "ما هو هدفك؟"
+      },
+      {
+        "screenId": "26",
+        "keyword_id": 464,
+        "keyword_name": "lblGoalSubtitle",
+        "keyword_value": "سنساعدك في العثور على السعرات المناسبة لتحقيقه"
+      },
+      {
+        "screenId": "26",
+        "keyword_id": 465,
+        "keyword_name": "lblSelectGoal",
+        "keyword_value": "يُرجى اختيار هدف"
+      }
+    ]
+  },
+  {
+    "screenID": "27",
+    "ScreenName": "SignUpStep6Component",
+    "keyword_data": [
+      {
+        "screenId": "27",
+        "keyword_id": 466,
+        "keyword_name": "lblWhatsYourActivityLevel",
+        "keyword_value": "ما هو مستوى نشاطك؟"
+      },
+      {
+        "screenId": "27",
+        "keyword_id": 467,
+        "keyword_name": "lblSelectActivityLevel",
+        "keyword_value": "يُرجى اختيار مستوى النشاط"
+      }
+    ]
+  }
+]

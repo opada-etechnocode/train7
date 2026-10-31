@@ -160,9 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: appStore.isDarkMode
-        ? context.scaffoldBackgroundColor
-        : context.scaffoldBackgroundColor,
+    backgroundColor: context.scaffoldBackgroundColor,
     appBar: PreferredSize(
       preferredSize: Size.fromHeight(
         appStore.selectedLanguageCode == 'ar' ? 100 : 90,
@@ -367,6 +365,18 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF151A22) : context.cardColor,
           borderRadius: BorderRadius.circular(26),
+          border: isDark
+              ? null
+              : Border.all(color: lightDividerColor),
+          boxShadow: isDark
+              ? null
+              : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.04),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
         ),
         child: Row(
           children: [

@@ -28,15 +28,28 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   sharedPreferences = await SharedPreferences.getInstance();
   HttpOverrides.global = MyHttpOverrides();
-  // await initialize(aLocaleLanguageList: languageList());
-  appStore.setLanguage(
-    sharedPreferences.getString(SELECTED_LANGUAGE_CODE) ?? defaultLanguageCode,
-  );
 
-  await Firebase.initializeApp().then((FirebaseApp value) {
-    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-  });
-  initJsonFile();
+  // Prevent LateInitializationError if any code reads languages early
+  languages = BaseLanguage();
+
+  final String startLang =
+      sharedPreferences.getString(SELECTED_LANGUAGE_CODE) ?? defaultLanguageCode;
+  try {
+    await initJsonFile(languageCode: startLang);
+    setDefaultLocate();
+    await appStore.setLanguage(startLang);
+  } catch (e, st) {
+    log('Language init failed: $e\n$st');
+    languages = BaseLanguage();
+  }
+
+  try {
+    await Firebase.initializeApp().then((FirebaseApp value) {
+      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+    });
+  } catch (e) {
+    log('Firebase init failed: $e');
+  }
 
   setLogInValue();
   defaultAppButtonShapeBorder = RoundedRectangleBorder(
@@ -114,6 +127,9 @@ class MyAppState extends State<MyApp> {
   }
 
   Future<void> init() async {
+    // Delay so splash can finish first frame / navigation
+    await Future<void>.delayed(const Duration(seconds: 2));
+    if (!mounted) return;
     _connectivitySubscription = Connectivity().onConnectivityChanged.listen((
       e,
     ) {
@@ -133,18 +149,9 @@ class MyAppState extends State<MyApp> {
   }
 
   @override
-  void didChangeDependencies() {
-
-    appStore.setDarkMode(true);
-    super.didChangeDependencies();
-  }
-
-  @override
-  void setState(void Function() fn) {
-    if (mounted) {
-      super.setState(fn);
-    }
+  void dispose() {
     _connectivitySubscription.cancel();
+    super.dispose();
   }
 
   @override
@@ -154,15 +161,19 @@ class MyAppState extends State<MyApp> {
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       scrollBehavior: SBehavior(),
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode:  ThemeMode.dark ,
+      themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      builder: (context, child) => GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: child ?? const SizedBox.shrink(),
+      ),
       localizationsDelegates: const [
         AppLocalizations(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        //AppLocalizations(),
       ],
       localeResolutionCallback: (locale, supportedLocales) => locale,
       supportedLocales: getSupportedLocales(),
@@ -171,13 +182,13 @@ class MyAppState extends State<MyApp> {
       ),
       home: const SplashScreen(),
       onGenerateRoute: (settings) {
-        final uri = Uri.parse(settings.name ?? "");
+        final uri = Uri.parse(settings.name ?? '');
 
-        if (uri.pathSegments.length == 3 && uri.pathSegments[1] == "post") {
+        if (uri.pathSegments.length == 3 && uri.pathSegments[1] == 'post') {
           postId = int.tryParse(uri.pathSegments[2]);
 
           if (postId != null) {
-            return MaterialPageRoute<void>(
+            return CupertinoPageRoute<void>(
               builder: (_) => const SplashScreen(isFromLink: true),
             );
           }

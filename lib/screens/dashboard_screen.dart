@@ -349,8 +349,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
       child: AnimatedContainer(
-        color: context.cardColor,
-        duration: const Duration(seconds: 1),
+        color: context.scaffoldBackgroundColor,
+        duration: const Duration(milliseconds: 250),
         child: tab[mCurrentIndex],
       ),
     ),

@@ -8,64 +8,56 @@ InputDecoration defaultInputDecoration(
   TextStyle? textStyle,
   bool? isFocusTExtField = false,
   Widget? mPrefix,
-}) => InputDecoration(
-  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-  floatingLabelBehavior: FloatingLabelBehavior.never,
-  prefixIcon: mPrefix,
-  border: OutlineInputBorder(
-    borderRadius: radius(),
-    borderSide: BorderSide(
-      color: isFocusTExtField == true
-          ? context.dividerColor.withValues(alpha: 0.7)
-          : context.dividerColor.withValues(alpha: 0.7),
+}) {
+  final bool isDark = appStore.isDarkMode;
+  final Color borderColor = context.dividerColor.withValues(alpha: 0.7);
+
+  return InputDecoration(
+    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+    floatingLabelBehavior: FloatingLabelBehavior.never,
+    prefixIcon: mPrefix,
+    // Fill only in light theme — dark theme input look unchanged
+    filled: !isDark,
+    fillColor: isDark ? null : const Color(0xFFF0F1F3),
+    hintText: hint,
+    hintStyle: secondaryTextStyle(),
+    border: OutlineInputBorder(
+      borderRadius: radius(),
+      borderSide: BorderSide(color: borderColor),
     ),
-  ),
-  focusedErrorBorder: OutlineInputBorder(
-    borderRadius: radius(),
-    borderSide: BorderSide(
-      color: isFocusTExtField == true
-          ? context.dividerColor.withValues(alpha: 0.7)
-          : primaryColor,
+    focusedErrorBorder: OutlineInputBorder(
+      borderRadius: radius(),
+      borderSide: BorderSide(
+        color: isFocusTExtField == true ? borderColor : primaryColor,
+      ),
     ),
-  ),
-  disabledBorder: OutlineInputBorder(
-    borderRadius: radius(),
-    borderSide: BorderSide(
-      color: isFocusTExtField == true
-          ? context.dividerColor.withValues(alpha: 0.7)
-          : context.dividerColor.withValues(alpha: 0.7),
+    disabledBorder: OutlineInputBorder(
+      borderRadius: radius(),
+      borderSide: BorderSide(color: borderColor),
     ),
-  ),
-  focusedBorder: OutlineInputBorder(
-    borderRadius: radius(),
-    borderSide: BorderSide(
-      color: isFocusTExtField == true
-          ? context.dividerColor.withValues(alpha: 0.7)
-          : primaryColor,
+    focusedBorder: OutlineInputBorder(
+      borderRadius: radius(),
+      borderSide: BorderSide(
+        color: isFocusTExtField == true ? borderColor : primaryColor,
+        width: 1.2,
+      ),
     ),
-  ),
-  enabledBorder: OutlineInputBorder(
-    borderRadius: radius(),
-    borderSide: BorderSide(
-      color: isFocusTExtField == true
-          ? context.dividerColor.withValues(alpha: 0.7)
-          : context.dividerColor.withValues(alpha: 0.7),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: radius(),
+      borderSide: BorderSide(color: borderColor),
     ),
-  ),
-  errorBorder: OutlineInputBorder(
-    borderRadius: radius(),
-    borderSide: BorderSide(
-      color: isFocusTExtField == true
-          ? context.dividerColor.withValues(alpha: 0.7)
-          : Colors.red,
+    errorBorder: OutlineInputBorder(
+      borderRadius: radius(),
+      borderSide: BorderSide(
+        color: isFocusTExtField == true ? borderColor : Colors.red,
+      ),
     ),
-  ),
-  alignLabelWithHint: true,
-  // filled: true,
-  isDense: true,
-  labelText: label ?? "Sample Text",
-  labelStyle: secondaryTextStyle(),
-);
+    alignLabelWithHint: true,
+    isDense: true,
+    labelText: label,
+    labelStyle: secondaryTextStyle(),
+  );
+}
 
 /// returns Radius
 BorderRadius radius([double? radius]) =>
@@ -124,7 +116,8 @@ Decoration boxDecorationWithRoundedCorners({
   BoxShape boxShape = BoxShape.rectangle,
 }) => BoxDecoration(
   color:
-      backgroundColor ?? (appStore.isDarkMode ? Color(0xFF151A22) : cardLightColor),
+      backgroundColor ??
+          (appStore.isDarkMode ? const Color(0xFF151A22) : cardLightColor),
   borderRadius: boxShape == BoxShape.circle ? null : (borderRadius ?? radius()),
   gradient: gradient,
   border: border,
@@ -159,7 +152,7 @@ Decoration boxDecorationWithShadow({
         ),
     color:
         backgroundColor ??
-        (appStore.isDarkMode ? Color(0xFF151A22) : cardLightColor),
+        (appStore.isDarkMode ? const Color(0xFF151A22) : cardLightColor),
     gradient: gradient,
     border: border,
     image: decorationImage,
@@ -185,7 +178,8 @@ Decoration boxDecorationRoundedWithShadow(
     offset: offset,
   ),
   color:
-      backgroundColor ?? (appStore.isDarkMode ? Color(0xFF151A22) : cardLightColor),
+      backgroundColor ??
+          (appStore.isDarkMode ? const Color(0xFF151A22) : cardLightColor),
   gradient: gradient,
   borderRadius: radius(radiusAll.toDouble()),
 );

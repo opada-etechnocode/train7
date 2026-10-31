@@ -136,7 +136,10 @@ class HomeAppBarHeader extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: const Color(0xFF0A0C14), width: 1.5),
+                  border: Border.all(
+                    color: appStore.isDarkMode ? scaffoldColorDark : Colors.white,
+                    width: 1.5,
+                  ),
                 ),
                 alignment: Alignment.center,
                 child: Text(

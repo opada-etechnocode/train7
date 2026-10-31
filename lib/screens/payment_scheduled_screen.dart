@@ -194,12 +194,12 @@ class PaymentScheduledScreenState extends State<PaymentScheduledScreen> {
     try {
       await MFSDK.init(
         "$myFatoorahToken",
-        MFCountry.KUWAIT,
+        MFCountry.UAE,
         isFatrooahTestType ? MFEnvironment.TEST : MFEnvironment.LIVE,
       );
       final MFInitiatePaymentRequest request = MFInitiatePaymentRequest(
         invoiceAmount: 10,
-        currencyIso: MFCurrencyISO.SAUDIARABIA_SAR,
+        currencyIso: MFCurrencyISO.UAE_AED,
       );
       await MFSDK
           .initiatePayment(request, MFLanguage.ENGLISH)
