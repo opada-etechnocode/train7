@@ -33,7 +33,7 @@ class ExerciseDetailHeader extends StatelessWidget {
         Positioned(
           left: 16,
           top: 16,
-          child: userStore.subscription == "1"
+          child: isSubscriptionEnabled
               ? mExerciseModel!.data!.isPremium == 1
                   ? mPro()
                   : const SizedBox()

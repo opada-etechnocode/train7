@@ -121,6 +121,7 @@ const ChatGptApiKey = "chatGptApiKey";
 const PrivacyPolicy = "privacyPolicy";
 const subscriptions = "subscription_system";
 const isLoginRequired = "login_required";
+const IS_APPLE_MODE = "IS_APPLE_MODE";
 
 //Ads
 const AdsBannerDetail_Show_Ads_On_Diet_Detail =

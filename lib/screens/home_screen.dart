@@ -1,5 +1,6 @@
 import '../components/health_permission_dialog.dart';
 import '../service/health_service.dart';
+import '../service/ugc_plan_sync_service.dart';
 import '../utils/shared_import.dart';
 
 bool? isFirstTimeGraph = false;
@@ -43,8 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
     super.initState();
     if (userStore.isLoggedIn) {
-      stepController.init();
-      waterController.init();
+      _initTrackersWithPlan();
       stepController.start();
     }
     dashboardFuture = getDashboardApi();
@@ -53,6 +53,20 @@ class _HomeScreenState extends State<HomeScreen> {
         checkHealthPermission();
       });
     }
+  }
+
+  Future<void> _initTrackersWithPlan() async {
+    await Future.wait([
+      stepController.init(),
+      waterController.init(),
+    ]);
+    await UgcPlanSyncService.syncTodayGoals();
+    await Future.wait([
+      stepController.getGoal(),
+      waterController.getGoal(),
+    ]);
+    stepController.updateUI.value++;
+    waterController.updateUI.value++;
   }
 
   void checkHealthPermission() async {

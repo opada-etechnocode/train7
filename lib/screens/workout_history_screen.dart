@@ -120,7 +120,7 @@ class WorkoutHistoryScreenState extends State<WorkoutHistoryScreen> {
                                         ],
                                       ),
                                     ),
-                                    if (userStore.subscription == "1")
+                                    if (isSubscriptionEnabled)
                                       if (data.exerciseIsPremium == 1) mPro(),
                                   ],
                                 ),
@@ -132,7 +132,7 @@ class WorkoutHistoryScreenState extends State<WorkoutHistoryScreen> {
                     ),
                   ).onTap(() async {
                     dynamic result;
-                    if (userStore.subscription == "1") {
+                    if (isSubscriptionEnabled) {
                       if (data.exerciseIsPremium == 1) {
                         if (userStore.isSubscribe == 0) {
                           result = await const SubscribeScreen().launch<Map<String, dynamic>>(context);

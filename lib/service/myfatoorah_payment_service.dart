@@ -51,6 +51,13 @@ class MyFatoorahPaymentService {
     String? token,
     bool isTest = MYFATOORAH_IS_TEST,
   }) async {
+    if (!isPurchaseEnabled) {
+      toast(languages.lblPurchasesDisabled);
+      return const MyFatoorahPaymentResult(
+        success: false,
+        message: 'Purchases disabled',
+      );
+    }
     if (amount <= 0) {
       return const MyFatoorahPaymentResult(
         success: false,

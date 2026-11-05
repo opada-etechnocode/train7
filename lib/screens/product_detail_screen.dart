@@ -52,16 +52,18 @@ class ProductDetailScreenState extends State<ProductDetailScreen> {
             : Brightness.dark,
       ),
       child: Scaffold(
-        bottomNavigationBar: AppButton(
-          text: languages.lblBuyNow,
-          width: context.width(),
-          color: primaryColor,
-          onTap: () {
-            WebViewScreen(
-              mInitialUrl: widget.productModel!.affiliateLink.toString(),
-            ).launch<void>(context);
-          },
-        ).paddingSymmetric(horizontal: 16, vertical: 12),
+        bottomNavigationBar: isPurchaseEnabled
+            ? AppButton(
+                text: languages.lblBuyNow,
+                width: context.width(),
+                color: primaryColor,
+                onTap: () {
+                  WebViewScreen(
+                    mInitialUrl: widget.productModel!.affiliateLink.toString(),
+                  ).launch<void>(context);
+                },
+              ).paddingSymmetric(horizontal: 16, vertical: 12)
+            : null,
         body: Stack(
           fit: StackFit.expand,
           clipBehavior: Clip.none,
@@ -115,14 +117,17 @@ class ProductDetailScreenState extends State<ProductDetailScreen> {
                         widget.productModel!.title.validate(),
                         style: boldTextStyle(size: 18),
                       ).paddingSymmetric(horizontal: 16),
-                      8.height,
-                      PriceWidget(
-                        price: widget.productModel!.price
-                            .validate()
-                            .toStringAsFixed(2),
-                        color: primaryColor,
-                        textStyle: boldTextStyle(color: primaryColor, size: 20),
-                      ).paddingSymmetric(horizontal: 16),
+                      if (isPurchaseEnabled) ...[
+                        8.height,
+                        PriceWidget(
+                          price: widget.productModel!.price
+                              .validate()
+                              .toStringAsFixed(2),
+                          color: primaryColor,
+                          textStyle:
+                              boldTextStyle(color: primaryColor, size: 20),
+                        ).paddingSymmetric(horizontal: 16),
+                      ],
                       8.height,
                       Divider(
                         color: appStore.isDarkMode

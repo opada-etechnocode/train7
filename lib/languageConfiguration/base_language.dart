@@ -1001,4 +1001,107 @@ class BaseLanguage {
     }
     return value;
   }
+
+  // -------------------- UGC hub --------------------
+  String _ugc(String ar, String en) =>
+      appStore.selectedLanguageCode == 'ar' ? ar : en;
+
+  String get lblUgcHubTitle => _ugc('بلان', 'Plan');
+  String get lblUgcHubSubtitle => _ugc(
+        'أنشئ خططك وتمارينك وحمياتك الخاصة',
+        'Build your custom programs, workouts and diets',
+      );
+  String get lblUgcProgramInfo => _ugc('معلومات الخطة', 'Plan details');
+  String get lblUgcSelectWorkout => _ugc('اختر التمرين', 'Select workout');
+  String get lblUgcSelectDiet => _ugc('اختر الحمية', 'Select diet');
+  String get lblUgcCardio => _ugc('كارديو', 'Cardio');
+  String get lblUgcSpecificDate => _ugc('التاريخ', 'Date');
+  String get lblUgcPickDate => _ugc('اختر من التقويم', 'Pick from calendar');
+  String get lblUgcActivate => _ugc('تفعيل الخطة', 'Activate plan');
+  String get lblUgcActivated => _ugc('مفعّلة', 'Active');
+  String get lblUgcActivateSuccess => _ugc(
+        'تم تفعيل الخطة وربطها بالجدولة والماء والخطوات',
+        'Plan activated and linked to schedule, water and steps',
+      );
+  String get lblUgcTodayPlan => _ugc('خطة اليوم', 'Today\'s plan');
+  String get lblUgcPlanForDay => _ugc('خطة هذا اليوم', 'Plan for this day');
+  String get lblUgcNoPlanDay =>
+      _ugc('لا يوجد يوم خطة لهذا التاريخ', 'No plan day for this date');
+  String get lblUgcDayDetail => _ugc('تفاصيل اليوم', 'Day details');
+  String get lblUgcTapDayHint =>
+      _ugc('اضغط على يوم في التقويم لعرض التفاصيل', 'Tap a day to view details');
+  String get lblPurchasesDisabled =>
+      _ugc('الشراء غير متاح حالياً', 'Purchases are currently unavailable');
+  String get lblUgcPrograms => _ugc('البرامج', 'Programs');
+  String get lblUgcWorkouts => _ugc('التمارين', 'Workouts');
+  String get lblUgcDiets => _ugc('الحميات', 'Diets');
+  String get lblUgcSetup => _ugc('الإعدادات', 'Setup');
+  String get lblUgcNoPrograms =>
+      _ugc('لا توجد برامج بعد', 'No programs yet');
+  String get lblUgcWeeks => _ugc('أسابيع', 'Weeks');
+  String get lblUgcRecurring => _ugc('متكرر أسبوعياً', 'Weekly recurring');
+  String get lblUgcCustom => _ugc('مخصص', 'Custom');
+  String get lblUgcDays => _ugc('أيام', 'Days');
+  String get lblUgcDay => _ugc('يوم', 'Day');
+  String get lblUgcCreateProgram => _ugc('إنشاء برنامج', 'Create Program');
+  String get lblUgcCreateWorkout => _ugc('إنشاء تمرين', 'Create Workout');
+  String get lblUgcCreateDiet => _ugc('إنشاء حمية', 'Create Diet');
+  String get lblUgcCreateWorkoutDesc => _ugc(
+        'أنشئ تمريناً مخصصاً لاستخدامه داخل برامجك',
+        'Create a custom workout to use inside your programs',
+      );
+  String get lblUgcCreateDietDesc => _ugc(
+        'أنشئ حمية مخصصة وربطها بأيام البرنامج',
+        'Create a custom diet and link it to program days',
+      );
+  String get lblUgcObjective => _ugc('الهدف', 'Objective');
+  String get lblUgcRecurringHint => _ugc(
+        'عند التفعيل تُعاد الأيام أسبوعياً',
+        'When enabled, days repeat weekly',
+      );
+  String get lblUgcAddDay => _ugc('أضف يوماً واحداً على الأقل', 'Add at least one day');
+  String get lblUgcWeekNumber => _ugc('رقم الأسبوع', 'Week number');
+  String get lblUgcDayOfWeek => _ugc('يوم الأسبوع (1-7)', 'Day of week (1-7)');
+  String get lblUgcWorkoutId => _ugc('معرّف التمرين', 'Workout ID');
+  String get lblUgcDietId => _ugc('معرّف الحمية', 'Diet ID');
+  String get lblUgcWaterMl => _ugc('هدف الماء (مل)', 'Water goal (ml)');
+  String get lblUgcSteps => _ugc('هدف الخطوات', 'Steps goal');
+  String get lblUgcNeedLevelType =>
+      _ugc('اختر المستوى ونوع التمرين', 'Select level and workout type');
+  String get lblUgcRestDay => _ugc('يوم راحة', 'Rest day');
+  String get lblUgcExerciseId => _ugc('معرّف التمرين', 'Exercise ID');
+  String get lblUgcReps => _ugc('تكرارات', 'Reps');
+  String get lblUgcWeight => _ugc('الوزن', 'Weight');
+  String get lblUgcNeedCategory =>
+      _ugc('اختر تصنيف الحمية', 'Select diet category');
+  String get lblUgcDietCategory => _ugc('تصنيف الحمية', 'Diet category');
+  String get lblUgcIngredients => _ugc('المكونات', 'Ingredients');
+  String get lblUgcCreateLevel => _ugc('إنشاء مستوى', 'Create Level');
+  String get lblUgcCreateWorkoutType =>
+      _ugc('إنشاء نوع تمرين', 'Create Workout Type');
+  String get lblUgcCreateCategory =>
+      _ugc('إنشاء تصنيف حمية', 'Create Diet Category');
+  String get lblUgcTitleRequired =>
+      _ugc('العنوان مطلوب', 'Title is required');
+  String get lblUgcRate => _ugc('التقييم', 'Rate');
+  String get lblEdit => _ugc('تعديل', 'Edit');
+  String get lblType => _ugc('النوع', 'Type');
+  String get lblCategory => _ugc('التصنيفات', 'Categories');
+
+  // AI Workout Coach
+  String get lblAiCoach => _ugc('مدرب الذكاء الاصطناعي', 'AI Coach');
+  String get lblAiStart => _ugc('ابدأ مع AI', 'Start with AI');
+  String get lblAiFinish => _ugc('إنهاء التمرين', 'Finish workout');
+  String get lblAiReset => _ugc('تصفير العدّات', 'Reset reps');
+  String get lblAiReps => _ugc('العدّات', 'Reps');
+  String get lblAiStage => _ugc('المرحلة', 'Stage');
+  String get lblAiScore => _ugc('الدقة', 'Score');
+  String get lblAiWorkoutSummary =>
+      _ugc('ملخص تمرين AI', 'AI Workout Summary');
+  String get lblAiCameraDenied =>
+      _ugc('يلزم إذن الكاميرا لمدرب AI', 'Camera permission is required for AI coach');
+  String get lblAiStartFailed =>
+      _ugc('تعذر بدء جلسة AI', 'Failed to start AI session');
+  String get lblAiSelectExercise =>
+      _ugc('اختر نوع التمرين', 'Select exercise type');
 }

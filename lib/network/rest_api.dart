@@ -1203,3 +1203,303 @@ Future<FoodRecognitionResponse> foodRecognitionApi(File media) async {
   } on Exception catch (_) {}
   throw Exception(message);
 }
+
+// -------------------- UGC (Programs & Custom Content) --------------------
+
+Future<UgcProgramListResponse> getUgcProgramList({
+  int page = 1,
+  int perPage = 10,
+}) async =>
+    UgcProgramListResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse('program-list?page=$page&per_page=$perPage'),
+      ),
+    );
+
+Future<UgcProgramDetailResponse> getUgcProgramDetail(int id) async =>
+    UgcProgramDetailResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse('program-detail?id=$id'),
+      ),
+    );
+
+Future<ProgramDayDetailResponse> getProgramDayDetailApi({
+  required int programId,
+  required String date,
+}) async =>
+    ProgramDayDetailResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'program-day-detail?program_id=$programId&date=$date',
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> saveUgcProgramApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'program-save',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> updateUgcProgramApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'program-update',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> deleteUgcProgramApi(int id) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'program-delete',
+          request: {'id': id},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> saveUgcWorkoutApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'workout-save',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> updateUgcWorkoutApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'workout-update',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> deleteUgcWorkoutApi(int id) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'workout-delete',
+          request: {'id': id},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> saveUgcDietApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'diet-save',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> updateUgcDietApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'diet-update',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> deleteUgcDietApi(int id) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'diet-delete',
+          request: {'id': id},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> saveUgcCategoryDietApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'categorydiet-save',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> updateUgcCategoryDietApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'categorydiet-update',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> deleteUgcCategoryDietApi(int id) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'categorydiet-delete',
+          request: {'id': id},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<CategoryDietResponse> getUserCategoryDietListApi({
+  int page = 1,
+  int perPage = 10,
+  String? title,
+}) async {
+  String url = 'user-categorydiet-list?page=$page&per_page=$perPage';
+  if (title.validate().isNotEmpty) url += '&title=$title';
+  return CategoryDietResponse.fromJson(
+    await handleResponse(await buildHttpResponse(url)),
+  );
+}
+
+Future<FitnessBaseResponse> saveUgcLevelApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'level-save',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> updateUgcLevelApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'level-update',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> deleteUgcLevelApi(int id) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'level-delete',
+          request: {'id': id},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<LevelResponse> getUserLevelListApi({
+  int page = 1,
+  int perPage = 10,
+  String? title,
+}) async {
+  String url = 'user-level-list?page=$page&per_page=$perPage';
+  if (title.validate().isNotEmpty) url += '&title=$title';
+  return LevelResponse.fromJson(
+    await handleResponse(await buildHttpResponse(url)),
+  );
+}
+
+Future<FitnessBaseResponse> saveUgcWorkoutTypeApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'workouttype-save',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> updateUgcWorkoutTypeApi(Map<String, dynamic> req) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'workouttype-update',
+          request: req,
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<FitnessBaseResponse> deleteUgcWorkoutTypeApi(int id) async =>
+    FitnessBaseResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'workouttype-delete',
+          request: {'id': id},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );
+
+Future<WorkoutTypeResponse> getUserWorkoutTypeListApi({
+  int page = 1,
+  int perPage = 10,
+  String? title,
+}) async {
+  String url = 'user-workouttype-list?page=$page&per_page=$perPage';
+  if (title.validate().isNotEmpty) url += '&title=$title';
+  return WorkoutTypeResponse.fromJson(
+    await handleResponse(await buildHttpResponse(url)),
+  );
+}
+
+// -------------------- AI Workout Coach --------------------
+
+Future<AiWorkoutStartResponse> startAiWorkoutApi({
+  required String exercise,
+  String camera = 'front',
+}) async {
+  final Map<String, dynamic> req = {
+    'exercise': exercise,
+    'camera': camera,
+    'user_id': 1,
+  };
+  return AiWorkoutStartResponse.fromJson(
+    await handleResponse(
+      await buildHttpResponse(
+        'ai-workout/start',
+        request: req,
+        method: HttpMethod.POST,
+      ),
+    ),
+  );
+}
+
+Future<AiWorkoutStopResponse> stopAiWorkoutApi({
+  required String pythonSessionId,
+}) async =>
+    AiWorkoutStopResponse.fromJson(
+      await handleResponse(
+        await buildHttpResponse(
+          'ai-workout/stop',
+          request: {'python_session_id': pythonSessionId},
+          method: HttpMethod.POST,
+        ),
+      ),
+    );

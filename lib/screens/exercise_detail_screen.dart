@@ -1,4 +1,5 @@
 import '../utils/shared_import.dart';
+import 'ai_workout_screen.dart';
 
 class ExerciseDetailScreen extends StatefulWidget {
   final int? mExerciseId;
@@ -337,9 +338,54 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
           future: exerciseDetailFuture,
           builder: (context, snapshot) {
             final hasData = snapshot.hasData && snapshot.data != null;
+            final String exerciseTitle =
+                (mExerciseModel?.data?.title ??
+                        snapshot.data?.data?.title ??
+                        widget.mExerciseName)
+                    .validate();
+            final String? aiKey = mapExerciseToAiKey(exerciseTitle);
             return Visibility(
               visible: (mode == 'portrait' && hasData),
-              child: AppButton(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (aiKey != null)
+                    AppButton(
+                      color: const Color(0xFF1B5E20),
+                      margin: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                      width: context.width(),
+                      height: 44,
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      elevation: 0,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.smart_toy_outlined,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                          8.width,
+                          Text(
+                            '${languages.lblAiStart} · $exerciseTitle',
+                            style: boldTextStyle(color: Colors.white, size: 14),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                      onTap: () {
+                        if (!userStore.isLoggedIn) {
+                          const SignInScreen().launch<void>(context);
+                          return;
+                        }
+                        AiWorkoutScreen(
+                          exerciseKey: aiKey,
+                          exerciseTitle: exerciseTitle,
+                        ).launch<void>(context);
+                      },
+                    ),
+                  AppButton(
                 color: primaryColor,
                 margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                 width: context.width(),
@@ -409,6 +455,8 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
                 text: isCompleted
                     ? languages.resetExercise
                     : languages.lblStartExercise,
+              ),
+                ],
               ),
             );
           },
@@ -593,3 +641,4 @@ class _ExerciseDetailScreenState extends State<ExerciseDetailScreen> {
         setState(() {});
       });
 }
+

@@ -101,7 +101,7 @@ class _FeaturedDietComponentState extends State<FeaturedDietComponent> {
                           setDiet(widget.mDietModel!.id.validate());
                         }),
                   ).visible(userStore.isLoggedIn),
-                  userStore.subscription == "1"
+                  isSubscriptionEnabled
                       ? widget.mDietModel!.isPremium == 1
                             ? Positioned(top: 12, left: 12, child: mPro())
                             : const SizedBox()
@@ -118,7 +118,7 @@ class _FeaturedDietComponentState extends State<FeaturedDietComponent> {
           ),
         ).onTap(() async {
           if (userStore.isLoggedIn) {
-            userStore.subscription == "1"
+            isSubscriptionEnabled
                 ? widget.mDietModel!.isPremium == 1
                       ? userStore.isSubscribe == 0
                             ? await const SubscribeScreen().launch<void>(context)
@@ -181,7 +181,7 @@ class _FeaturedDietComponentState extends State<FeaturedDietComponent> {
                           setDiet(widget.mDietModel!.id.validate());
                         }),
                   ).visible(userStore.isLoggedIn),
-                  userStore.subscription == "1"
+                  isSubscriptionEnabled
                       ? widget.mDietModel!.isPremium == 1
                             ? Positioned(top: 12, left: 12, child: mPro())
                             : const SizedBox()
@@ -227,7 +227,7 @@ class _FeaturedDietComponentState extends State<FeaturedDietComponent> {
           ),
         ).onTap(() async {
           if (userStore.isLoggedIn) {
-            userStore.subscription == "1"
+            isSubscriptionEnabled
                 ? widget.mDietModel!.isPremium == 1
                       ? userStore.isSubscribe == 0
                             ? const SubscribeScreen().launch<void>(context)

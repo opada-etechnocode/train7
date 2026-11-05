@@ -334,8 +334,6 @@ class _ExerciseListScreenState extends State<ExerciseListScreen>
                                       height: height,
                                       onTap: () async {
                                         final workout = mWorkoutList[i];
-                                        final bool isSubscriptionEnabled =
-                                            userStore.subscription == "1";
                                         final bool isPremiumWorkout =
                                             workout.isPremium == 1;
                                         final bool isUserSubscribed =

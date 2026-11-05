@@ -27,10 +27,13 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _warmup() async {
+    // Apply cached Apple mode immediately (updated from API below)
+    userStore.isApple = getBoolAsync(IS_APPLE_MODE);
     try {
       final AppSettingResponse value = await getAppSettingApi().timeout(
         const Duration(seconds: 2),
       );
+      await applyAppleModeFromSettings(value);
       await userStore.setLoginRequired(value.loginEnable?.validate() == '1');
     } catch (e) {
       log('getAppSettingApi: $e');

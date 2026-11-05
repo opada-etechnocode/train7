@@ -17,16 +17,13 @@ class DashboardBottomNavBar extends StatelessWidget {
       const SignInScreen().launch<void>(context);
       return;
     }
-    if (index == 5 && userStore.isLoggedIn && userStore.weight.isEmptyOrNull) {
-      toast(languages.lblPleaseenteryourageweightandhei);
-      return;
-    }
     onTap(index);
   }
 
   @override
   Widget build(BuildContext context) {
     final bool isDark = appStore.isDarkMode;
+    final bool apple = isAppleMode;
     final Color barColor = isDark ? const Color(0xFF12151C) : Colors.white;
     final Color inactive = isDark ? Colors.white54 : const Color(0xFF8A8A8A);
 
@@ -75,7 +72,7 @@ class DashboardBottomNavBar extends StatelessWidget {
                     label: languages.lblShop,
                     inactiveColor: inactive,
                   ),
-                  const SizedBox(width: 40),
+                  if (!apple) const SizedBox(width: 40),
                   _navItem(
                     context,
                     index: 3,
@@ -94,36 +91,37 @@ class DashboardBottomNavBar extends StatelessWidget {
                     inactiveColor: inactive,
                     height: 22,
                   ),
-                  _navItem(
-                    context,
-                    index: 5,
-                    iconData: Icons.assignment_outlined,
-                    activeIconData: Icons.assignment,
-                    label: languages.plan,
-                    inactiveColor: inactive,
-                  ),
+                  if (!apple)
+                    _navItem(
+                      context,
+                      index: 5,
+                      iconData: Icons.assignment_outlined,
+                      activeIconData: Icons.assignment,
+                      label: languages.lblUgcHubTitle,
+                      inactiveColor: inactive,
+                    ),
                 ],
               ),
-              Positioned(
-                top: -15,
-                child: GestureDetector(
-                  onTap: onFabTap,
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [primaryLightColor, primaryColor],
+              if (!apple)
+                Positioned(
+                  top: -15,
+                  child: GestureDetector(
+                    onTap: onFabTap,
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [primaryLightColor, primaryColor],
+                        ),
                       ),
-
+                      child: const Icon(Icons.add, color: Colors.black, size: 24),
                     ),
-                    child: const Icon(Icons.add, color: Colors.black, size: 24),
                   ),
                 ),
-              ),
             ],
           ),
         ),

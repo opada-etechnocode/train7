@@ -75,7 +75,7 @@ class _ExerciseComponentState extends State<ExerciseComponent> {
                             mSets!.join(" ").toString(),
                             style: secondaryTextStyle(size: 12),
                           ),
-                        if (userStore.subscription == "1")
+                        if (isSubscriptionEnabled)
                           if (widget.mExerciseModel!.isPremium == 1) mPro(),
                       ],
                     ),
@@ -86,7 +86,7 @@ class _ExerciseComponentState extends State<ExerciseComponent> {
           ],
         ),
       ).onTap(() async {
-        userStore.subscription == "1"
+        isSubscriptionEnabled
             ? widget.mExerciseModel!.isPremium == 1
                   ? userStore.isSubscribe == 0
                         ? await const SubscribeScreen().launch<void>(context)

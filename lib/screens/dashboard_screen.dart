@@ -1,4 +1,5 @@
 import '../utils/shared_import.dart';
+import 'ugc_hub_screen.dart';
 
 bool? isFirstTime = false;
 AppVersion? appUpdateCheck;
@@ -16,18 +17,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
   int mCurrentIndex = 0;
   int mCounter = 0;
 
-  List<Widget> get tab => [
-    const HomeScreen(),
-    const DietScreen(),
-    const ProductScreen(),
-    userStore.isLoggedIn
-        ? const CommunityScreen()
-        : const SignInScreen(showBack: false),
-    userStore.isLoggedIn
-        ? const ScheduleScreen()
-        : const SignInScreen(showBack: false),
-    userStore.isLoggedIn ? const PlanScreen() : const SignInScreen(showBack: false),
-  ];
+  List<Widget> get tab {
+    final List<Widget> items = [
+      const HomeScreen(),
+      const DietScreen(),
+      const ProductScreen(),
+      userStore.isLoggedIn
+          ? const CommunityScreen()
+          : const SignInScreen(showBack: false),
+      userStore.isLoggedIn
+          ? const ScheduleScreen()
+          : const SignInScreen(showBack: false),
+    ];
+    if (!isAppleMode) {
+      items.add(
+        userStore.isLoggedIn
+            ? const UgcHubScreen()
+            : const SignInScreen(showBack: false),
+      );
+    }
+    return items;
+  }
 
   List<BottomBarItemModel> bottomItemList = [
     BottomBarItemModel(
@@ -274,6 +284,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       }
 
       getSettingData().whenComplete(() {
+        if (mounted) {
+          if (mCurrentIndex >= tab.length) {
+            mCurrentIndex = 0;
+          }
+          setState(() {});
+        }
         if (getStringAsync(CRISP_CHAT_WEB_SITE_ID).isNotEmpty) {
           final User user = User(
             email: userStore.email,
@@ -355,13 +371,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
       ),
     ),
     bottomNavigationBar: DashboardBottomNavBar(
-      currentIndex: mCurrentIndex,
+      currentIndex: mCurrentIndex.clamp(0, tab.length - 1),
       onTap: (index) {
+        if (index < 0 || index >= tab.length) return;
         setState(() {
           mCurrentIndex = index;
         });
       },
       onFabTap: () {
+        if (isAppleMode) return;
         if (userStore.isLoggedIn) {
           const SubscriptionDetailScreen().launch<void>(context);
         } else {

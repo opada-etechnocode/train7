@@ -58,7 +58,7 @@ class _WorkoutComponentState extends State<WorkoutComponent> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  userStore.subscription == "1"
+                  isSubscriptionEnabled
                       ? widget.mWorkoutModel!.isPremium == 1
                             ? mPro()
                             : const SizedBox()
@@ -147,7 +147,7 @@ class _WorkoutComponentState extends State<WorkoutComponent> {
     final model = widget.mWorkoutModel!;
     final bool isPremiumWorkout = model.isPremium == 1;
 
-    if (userStore.subscription == "1" && isPremiumWorkout && userStore.isSubscribe == 0) {
+    if (isSubscriptionEnabled && isPremiumWorkout && userStore.isSubscribe == 0) {
       const SubscribeScreen().launch<void>(context);
     } else {
       WorkoutDetailScreen(

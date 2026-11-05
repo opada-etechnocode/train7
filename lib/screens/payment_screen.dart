@@ -72,6 +72,13 @@ class PaymentScreenState extends State<PaymentScreen> {
   @override
   void initState() {
     super.initState();
+    if (!isPurchaseEnabled) {
+      afterBuildCreated(() {
+        toast(languages.lblPurchasesDisabled);
+        finish(context);
+      });
+      return;
+    }
     init();
   }
 

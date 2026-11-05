@@ -193,7 +193,7 @@ class _WorkoutDetailScreenState extends State<WorkoutDetailScreen> {
                                   color: whiteColor,
                                 ),
                               ),
-                              if (userStore.subscription == "1")
+                              if (isSubscriptionEnabled)
                                 if (mWorkoutDetailModel!.isPremium == 1)
                                   mPro().paddingOnly(left: 16, top: 8),
                             ],

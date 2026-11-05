@@ -89,7 +89,7 @@ class UpNextExerciseComponentState extends State<UpNextExerciseComponent> {
                             widget.mSets!.join(" ").toString(),
                             style: secondaryTextStyle(size: 12),
                           ),
-                        if (userStore.subscription == "1")
+                        if (isSubscriptionEnabled)
                           if (widget.mDayExerciseModel.exercise?.isPremium == 1)
                             mPro(),
                       ],
@@ -101,7 +101,7 @@ class UpNextExerciseComponentState extends State<UpNextExerciseComponent> {
           ],
         ),
       ).onTap(() async {
-        if (userStore.subscription == "1") {
+        if (isSubscriptionEnabled) {
           if (widget.mDayExerciseModel.exercise!.isPremium == 1) {
             if (userStore.isSubscribe == 0) {
               await const SubscribeScreen().launch<void>(context);

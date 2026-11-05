@@ -14,6 +14,13 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
   @override
   void initState() {
     super.initState();
+    if (!isPurchaseEnabled) {
+      afterBuildCreated(() {
+        toast(languages.lblPurchasesDisabled);
+        finish(context);
+      });
+      return;
+    }
     getProgramData();
   }
 

@@ -196,13 +196,19 @@ abstract class UserStoreBase with Store {
   @observable
   bool loginRequired = false;
 
+  /// Apple review / store mode from get-appsetting `is_apple`.
+  /// Not MobX-generated — set early and read via [isAppleMode].
+  bool isApple = false;
+
   @action
   Future<void> setSubscription(
     String val, {
     bool isInitialization = false,
   }) async {
-    subscription = val;
-    if (!isInitialization) await setValue(subscriptions, val);
+    // Apple review mode keeps purchases/subscription UI off
+    final String effective = isApple ? '0' : val;
+    subscription = effective;
+    if (!isInitialization) await setValue(subscriptions, effective);
   }
 
   @action
@@ -212,6 +218,11 @@ abstract class UserStoreBase with Store {
   }) async {
     loginRequired = val;
     if (!isInitialization) await setValue(isLoginRequired, val);
+  }
+
+  Future<void> setIsApple(bool val) async {
+    isApple = val;
+    await setValue(IS_APPLE_MODE, val);
   }
 
   @action

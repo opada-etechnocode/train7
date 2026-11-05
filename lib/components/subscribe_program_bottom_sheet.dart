@@ -264,8 +264,12 @@ Future<void> showSubscribeProgramBottomSheet(
   BuildContext context,
   ProgramModel program, {
   bool popOnSuccess = false,
-}) {
-  return showModalBottomSheet<void>(
+}) async {
+  if (!isPurchaseEnabled) {
+    toast(languages.lblPurchasesDisabled);
+    return;
+  }
+  await showModalBottomSheet<void>(
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,

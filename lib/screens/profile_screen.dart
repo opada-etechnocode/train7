@@ -260,7 +260,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           //   VideoScreen().launch(context);
                           // }),
                           const Divider(height: 0, color: grayColor),
-                          if (userStore.subscription == "1")
+                          if (isSubscriptionEnabled)
                             mOption(
                               ic_dumbbell,
                               languages.lblSubscriptionPlans,
@@ -275,7 +275,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const Divider(
                             height: 0,
                             color: grayColor,
-                          ).visible(userStore.isLoggedIn),
+                          ).visible(userStore.isLoggedIn && isSubscriptionEnabled),
                           mOption(
                             ic_fav_outline,
                             languages.lblFavoriteWorkoutAndNutristions,
@@ -312,19 +312,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             goToLogin: true,
                           ),
                           const Divider(height: 0, color: grayColor),
-                          mOption(
-                            ic_assigned,
-                            languages.lblPlan,
-                            () {
-                              const AssignScreen().launch<void>(context);
-                            },
-                            context,
-                            requireLogin: true,
-                          ),
-                          const Divider(
-                            height: 0,
-                            color: grayColor,
-                          ).visible(userStore.isLoggedIn),
+                          if (!isAppleMode)
+                            mOption(
+                              ic_assigned,
+                              languages.lblPlan,
+                              () {
+                                const AssignScreen().launch<void>(context);
+                              },
+                              context,
+                              requireLogin: true,
+                            ),
+                          if (!isAppleMode)
+                            const Divider(
+                              height: 0,
+                              color: grayColor,
+                            ).visible(userStore.isLoggedIn),
                           mOption(
                             ic_report_outline,
                             languages.lblReport,

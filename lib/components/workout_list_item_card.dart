@@ -56,7 +56,7 @@ class WorkoutListItemCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          userStore.subscription == "1"
+          isSubscriptionEnabled
               ? workout.isPremium == 1
                     ? mPro()
                     : const SizedBox()

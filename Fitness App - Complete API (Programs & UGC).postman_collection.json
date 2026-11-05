@@ -1,0 +1,872 @@
+{
+  "info": {
+    "_postman_id": "bb1d0d5f-e397-44e6-86a2-61fb18960573",
+    "name": "Fitness App - Complete API (Programs & UGC)",
+    "description": "Complete API collection for Programs, Custom Workouts, Diets, and Attributes.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33981618",
+    "_collection_link": "https://go.postman.co/collection/33981618-bb1d0d5f-e397-44e6-86a2-61fb18960573?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Programs",
+      "item": [
+        {
+          "name": "Get Program List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/program-list?per_page=10&page=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "program-list"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "10",
+                  "description": "Number of items per page. Use -1 for all."
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Program Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/program-detail?id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "program-detail"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "The ID of the program to fetch."
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save Program (Weekly Recurring)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Lean & Strong\",\n    \"objective\": \"Muscle Gain\",\n    \"duration_weeks\": 4,\n    \"is_recurring\": true,\n    \"frequency\": \"weekly\",\n    \"days\": [\n        {\n            \"week_number\": 1,\n            \"day_of_week\": 1,\n            \"type\": \"workout\",\n            \"workout_id\": 5,\n            \"diet_id\": 2,\n            \"water_goal_ml\": 3000,\n            \"steps_goal\": 10000\n        },\n        {\n            \"week_number\": 1,\n            \"day_of_week\": 2,\n            \"type\": \"rest\",\n            \"workout_id\": null,\n            \"diet_id\": 2,\n            \"water_goal_ml\": 2500,\n            \"steps_goal\": 5000\n        },\n        {\n            \"week_number\": 1,\n            \"day_of_week\": 3,\n            \"type\": \"cardio\",\n            \"workout_id\": 8,\n            \"diet_id\": 3,\n            \"water_goal_ml\": 3000,\n            \"steps_goal\": 12000\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/program-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "program-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save Program (Custom Non-Recurring)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Summer Shred\",\n    \"objective\": \"Fat Loss\",\n    \"duration_weeks\": 2,\n    \"is_recurring\": false,\n    \"frequency\": \"custom\",\n    \"days\": [\n        {\n            \"specific_date\": \"2025-11-01\",\n            \"type\": \"workout\",\n            \"workout_id\": 2,\n            \"diet_id\": 1,\n            \"water_goal_ml\": 3500,\n            \"steps_goal\": 10000\n        },\n        {\n            \"specific_date\": \"2025-11-05\",\n            \"type\": \"cardio\",\n            \"workout_id\": 9,\n            \"diet_id\": 1,\n            \"water_goal_ml\": 3500,\n            \"steps_goal\": 15000\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/program-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "program-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Program",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"name\": \"Lean & Strong - Revised\",\n    \"duration_weeks\": 6,\n    \"days\": [\n        {\n            \"week_number\": 1,\n            \"day_of_week\": 1,\n            \"type\": \"cardio\",\n            \"workout_id\": 10,\n            \"diet_id\": null,\n            \"water_goal_ml\": 4000,\n            \"steps_goal\": 15000\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/program-update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "program-update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Program",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/program-delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "program-delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Workouts",
+      "item": [
+        {
+          "name": "Save Custom Workout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"My Custom Push Day\",\n    \"description\": \"Chest, shoulders, and triceps\",\n    \"level_id\": 1,\n    \"workout_type_id\": 1,\n    \"days\": [\n        {\n            \"is_rest\": false,\n            \"exercises\": [\n                {\n                    \"exercise_id\": 1,\n                    \"sets\": [\n                        {\"reps\": 10, \"weight\": 50},\n                        {\"reps\": 8, \"weight\": 55}\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/workout-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "workout-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Custom Workout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"title\": \"My Custom Push Day - Revised\",\n    \"description\": \"Updated chest and triceps\",\n    \"level_id\": 2,\n    \"workout_type_id\": 1,\n    \"days\": [\n        {\n            \"is_rest\": false,\n            \"exercises\": [\n                {\n                    \"exercise_id\": 3,\n                    \"sets\": [\n                        {\"reps\": 15, \"weight\": 30}\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/workout-update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "workout-update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Custom Workout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/workout-delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "workout-delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Diets",
+      "item": [
+        {
+          "name": "Save Custom Diet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"My Custom Keto Diet\",\n    \"categorydiet_id\": 1,\n    \"calories\": 2000,\n    \"protein\": 150,\n    \"carbs\": 20,\n    \"fat\": 160,\n    \"description\": \"High fat, low carb diet.\",\n    \"ingredients\": \"Eggs, bacon, avocado, spinach\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/diet-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "diet-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Custom Diet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"title\": \"My Custom Keto Diet - Revised\",\n    \"categorydiet_id\": 1,\n    \"calories\": 2200,\n    \"protein\": 160,\n    \"carbs\": 25,\n    \"fat\": 170,\n    \"description\": \"Updated macros.\",\n    \"ingredients\": \"Eggs, bacon, avocado, spinach, olive oil\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/diet-update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "diet-update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Custom Diet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/diet-delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "diet-delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Category Diets",
+      "item": [
+        {
+          "name": "Save Custom Category Diet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Intermittent Fasting\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/categorydiet-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categorydiet-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Custom Category Diet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"title\": \"Intermittent Fasting - 16:8\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/categorydiet-update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categorydiet-update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Custom Category Diet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/categorydiet-delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categorydiet-delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Category Diets by user id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user-categorydiet-list?per_page=10&title=keto",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user-categorydiet-list"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "10"
+                },
+                {
+                  "key": "title",
+                  "value": "keto"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. Levels",
+      "item": [
+        {
+          "name": "Save Custom Level",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Absolute Beginner\",\n    \"rate\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/level-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "level-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Custom Level",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"title\": \"Beginner\",\n    \"rate\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/level-update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "level-update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Custom Level",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/level-delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "level-delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List levels by user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user-level-list?per_page=10&title=beginner",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user-level-list"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "10"
+                },
+                {
+                  "key": "title",
+                  "value": "beginner"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "6. Workout Types",
+      "item": [
+        {
+          "name": "Save Custom Workout Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Calisthenics\",\n    \"rate\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/workouttype-save",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "workouttype-save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Custom Workout Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1,\n    \"title\": \"Advanced Calisthenics\",\n    \"rate\": 4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/workouttype-update",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "workouttype-update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Custom Workout Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/workouttype-delete",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "workouttype-delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List workout-type by user id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user-workouttype-list?per_page=10&title=cardio",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "user-workouttype-list"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "10"
+                },
+                {
+                  "key": "title",
+                  "value": "cardio"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "3|C316uOGM73DFfx7x9DOqeqV6AM1LCw2OmWGEisuGfa472bc9",
+      "type": "string"
+    }
+  ]
+}

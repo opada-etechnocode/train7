@@ -125,7 +125,7 @@ class _DietDetailScreenState extends State<DietDetailScreen> {
                           color: whiteColor,
                         ),
                       ),
-                      if (userStore.subscription == "1")
+                      if (isSubscriptionEnabled)
                         if (widget.dietModel!.isPremium == 1)
                           mPro().paddingOnly(left: 16, top: 8),
                     ],

@@ -74,13 +74,15 @@ class _ScheduledComponentState extends State<ScheduledComponent> {
                 ),
               ),
               child: Text(
-                (widget.scheduledWorkoutList.price != null &&
-                        widget.scheduledWorkoutList.isClassSchedulePlan == 0)
-                    ? '${userStore.currencySymbol} ${widget.scheduledWorkoutList.price} '
-                    : widget.scheduledWorkoutList.price != null &&
-                          widget.scheduledWorkoutList.isClassSchedulePlan == 1
-                    ? languages.lblPurchases
-                    : languages.lblFree,
+                !isPurchaseEnabled
+                    ? languages.lblFree
+                    : (widget.scheduledWorkoutList.price != null &&
+                            widget.scheduledWorkoutList.isClassSchedulePlan == 0)
+                        ? '${userStore.currencySymbol} ${widget.scheduledWorkoutList.price} '
+                        : widget.scheduledWorkoutList.price != null &&
+                              widget.scheduledWorkoutList.isClassSchedulePlan == 1
+                            ? languages.lblPurchases
+                            : languages.lblFree,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 13,
@@ -132,6 +134,12 @@ class _ScheduledComponentState extends State<ScheduledComponent> {
             ),
             child: GestureDetector(
               onTap: () async {
+                if (!isPurchaseEnabled) {
+                  if (widget.scheduledWorkoutList.link != null) {
+                    launchUrlString(widget.scheduledWorkoutList.link ?? '');
+                  }
+                  return;
+                }
                 if (widget.scheduledWorkoutList.isPaid == '0') {
                   if (widget.scheduledWorkoutList.link != null) {
                     launchUrlString(widget.scheduledWorkoutList.link ?? '');

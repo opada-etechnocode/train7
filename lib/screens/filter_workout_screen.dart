@@ -293,7 +293,7 @@ class _FilterWorkoutScreenState extends State<FilterWorkoutScreen> {
                             height: height,
                             onTap: () async {
                               saveIndex = i;
-                              bool isPremium = userStore.subscription == "1" && mWorkoutList[i].isPremium == 1;
+                              bool isPremium = isSubscriptionEnabled && mWorkoutList[i].isPremium == 1;
                               if (isPremium && userStore.isSubscribe == 0) {
                                 await const SubscribeScreen().launch<void>(context);
                               } else {

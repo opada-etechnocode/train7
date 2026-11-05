@@ -28,6 +28,13 @@ class _SubscriptionDetailScreenState extends State<SubscriptionDetailScreen> {
   @override
   void initState() {
     super.initState();
+    if (!isPurchaseEnabled) {
+      afterBuildCreated(() {
+        toast(languages.lblPurchasesDisabled);
+        finish(context);
+      });
+      return;
+    }
     getProgramsList();
     getSubscriptionHistory();
     LiveStream().on(PAYMENT, (p0) {

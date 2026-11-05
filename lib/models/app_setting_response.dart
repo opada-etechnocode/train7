@@ -16,6 +16,7 @@ class AppSettingResponse {
   String? updatedAt;
   String? loginEnable;
   String? subscription;
+  int? isApple;
   AppVersion? appVersion;
   CrispChat? crispChat;
   MobileGame? mobileGame;
@@ -37,9 +38,9 @@ class AppSettingResponse {
     this.helpSupportUrl,
     this.createdAt,
     this.updatedAt,
-    this.appVersion,
     this.loginEnable,
     this.subscription,
+    this.isApple,
     this.crispChat,
     this.mobileGame,
     this.pages,
@@ -66,6 +67,14 @@ class AppSettingResponse {
         : null;
     loginEnable = json['login_enable'];
     subscription = json['subscription'];
+    final dynamic apple = json['is_apple'];
+    if (apple is int) {
+      isApple = apple;
+    } else if (apple != null) {
+      isApple = int.tryParse(apple.toString()) ?? 0;
+    } else {
+      isApple = 0;
+    }
     crispChat = json['crisp_chat'] != null
         ? CrispChat.fromJson(json['crisp_chat'])
         : null;
@@ -102,6 +111,7 @@ class AppSettingResponse {
     }
     data['login_enable'] = loginEnable;
     data['subscription'] = subscription;
+    data['is_apple'] = isApple;
     if (crispChat != null) {
       data['crisp_chat'] = crispChat!.toJson();
     }

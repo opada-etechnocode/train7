@@ -67,6 +67,13 @@ class PaymentScheduledScreenState extends State<PaymentScheduledScreen> {
   @override
   void initState() {
     super.initState();
+    if (!isPurchaseEnabled) {
+      afterBuildCreated(() {
+        toast(languages.lblPurchasesDisabled);
+        finish(context);
+      });
+      return;
+    }
     init();
   }
 

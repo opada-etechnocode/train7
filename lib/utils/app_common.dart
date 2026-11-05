@@ -229,8 +229,30 @@ Widget mOption(
   );
 }
 
+/// Apple App Store review mode (`is_apple` == 1 from get-appsetting).
+bool get isAppleMode =>
+    userStore.isApple || getBoolAsync(IS_APPLE_MODE);
+
+/// Subscription / IAP UI and paywalls (disabled in Apple mode).
+bool get isSubscriptionEnabled =>
+    !isAppleMode && userStore.subscription == '1';
+
+/// Any purchase flow (subscription, programs, shop, classes).
+bool get isPurchaseEnabled => !isAppleMode;
+
+Future<void> applyAppleModeFromSettings(AppSettingResponse value) async {
+  final bool apple = (value.isApple ?? 0) == 1;
+  await userStore.setIsApple(apple);
+  if (apple) {
+    // Hide subscription UI / paywalls while keeping content usable.
+    await userStore.setSubscription('0');
+  } else {
+    await userStore.setSubscription(value.subscription.validate());
+  }
+}
+
 Future<void> getSettingData() async {
-  await getAppSettingApi().then((value) {
+  await getAppSettingApi().then((value) async {
     log('------------------238------------>>-${value.toJson()}');
 
     appUpdateCheck = value.appVersion;
@@ -260,8 +282,8 @@ Future<void> getSettingData() async {
       CRISP_CHAT_WEB_SITE_ID,
       value.crispChat?.crispChatWebsiteId.validate(),
     );
-    userStore.setSubscription(value.subscription.validate());
-    userStore.setLoginRequired(value.loginEnable.validate() == "1");
+    await applyAppleModeFromSettings(value);
+    await userStore.setLoginRequired(value.loginEnable.validate() == "1");
   });
 }
 
